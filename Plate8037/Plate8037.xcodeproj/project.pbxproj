@@ -17,6 +17,8 @@
 		B2C003A623587A220015AFFC /* RandomizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003A523587A220015AFFC /* RandomizerTests.swift */; };
 		B2C003A823587D230015AFFC /* PrecedingNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003A723587D230015AFFC /* PrecedingNumbers.swift */; };
 		B2C003AA23587DA30015AFFC /* PrecedingNumbersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003A923587DA30015AFFC /* PrecedingNumbersTests.swift */; };
+		B2D47348235894AC00DF1720 /* reddelicious3d.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2D47346235894AC00DF1720 /* reddelicious3d.ttf */; };
+		B2D47349235894AC00DF1720 /* reddeliciousacad.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2D47347235894AC00DF1720 /* reddeliciousacad.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		B2C003A523587A220015AFFC /* RandomizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerTests.swift; sourceTree = "<group>"; };
 		B2C003A723587D230015AFFC /* PrecedingNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecedingNumbers.swift; sourceTree = "<group>"; };
 		B2C003A923587DA30015AFFC /* PrecedingNumbersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecedingNumbersTests.swift; sourceTree = "<group>"; };
+		B2D47346235894AC00DF1720 /* reddelicious3d.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = reddelicious3d.ttf; sourceTree = "<group>"; };
+		B2D47347235894AC00DF1720 /* reddeliciousacad.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = reddeliciousacad.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				B2C003772358784A0015AFFC /* Main.storyboard */,
 				B2C003A1235879DA0015AFFC /* Services */,
 				B2C0037A2358784A0015AFFC /* Assets.xcassets */,
+				B2D473412358924E00DF1720 /* Resources */,
 				B2C0037C2358784A0015AFFC /* LaunchScreen.storyboard */,
 				B2C0037F2358784A0015AFFC /* Info.plist */,
 			);
@@ -148,6 +153,23 @@
 				B2C003A923587DA30015AFFC /* PrecedingNumbersTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B2D473412358924E00DF1720 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2D473422358927A00DF1720 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B2D473422358927A00DF1720 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B2D47346235894AC00DF1720 /* reddelicious3d.ttf */,
+				B2D47347235894AC00DF1720 /* reddeliciousacad.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +276,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D47349235894AC00DF1720 /* reddeliciousacad.ttf in Resources */,
 				B2C0037E2358784A0015AFFC /* LaunchScreen.storyboard in Resources */,
+				B2D47348235894AC00DF1720 /* reddelicious3d.ttf in Resources */,
 				B2C0037B2358784A0015AFFC /* Assets.xcassets in Resources */,
 				B2C003792358784A0015AFFC /* Main.storyboard in Resources */,
 			);
