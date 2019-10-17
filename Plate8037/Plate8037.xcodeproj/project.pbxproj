@@ -12,8 +12,9 @@
 		B2C003792358784A0015AFFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C003772358784A0015AFFC /* Main.storyboard */; };
 		B2C0037B2358784A0015AFFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C0037A2358784A0015AFFC /* Assets.xcassets */; };
 		B2C0037E2358784A0015AFFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C0037C2358784A0015AFFC /* LaunchScreen.storyboard */; };
-		B2C003892358784B0015AFFC /* Plate8037Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003882358784B0015AFFC /* Plate8037Tests.swift */; };
 		B2C003942358784B0015AFFC /* Plate8037UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003932358784B0015AFFC /* Plate8037UITests.swift */; };
+		B2C003A3235879EA0015AFFC /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003A2235879EA0015AFFC /* Randomizer.swift */; };
+		B2C003A623587A220015AFFC /* RandomizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003A523587A220015AFFC /* RandomizerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +43,12 @@
 		B2C0037D2358784A0015AFFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2C0037F2358784A0015AFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C003842358784B0015AFFC /* Plate8037Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Plate8037Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2C003882358784B0015AFFC /* Plate8037Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plate8037Tests.swift; sourceTree = "<group>"; };
 		B2C0038A2358784B0015AFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C0038F2358784B0015AFFC /* Plate8037UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Plate8037UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C003932358784B0015AFFC /* Plate8037UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plate8037UITests.swift; sourceTree = "<group>"; };
 		B2C003952358784B0015AFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2C003A2235879EA0015AFFC /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
+		B2C003A523587A220015AFFC /* RandomizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				B2C003712358784A0015AFFC /* AppDelegate.swift */,
 				B2C003752358784A0015AFFC /* ViewController.swift */,
 				B2C003772358784A0015AFFC /* Main.storyboard */,
+				B2C003A1235879DA0015AFFC /* Services */,
 				B2C0037A2358784A0015AFFC /* Assets.xcassets */,
 				B2C0037C2358784A0015AFFC /* LaunchScreen.storyboard */,
 				B2C0037F2358784A0015AFFC /* Info.plist */,
@@ -110,7 +113,7 @@
 		B2C003872358784B0015AFFC /* Plate8037Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B2C003882358784B0015AFFC /* Plate8037Tests.swift */,
+				B2C003A423587A130015AFFC /* Services */,
 				B2C0038A2358784B0015AFFC /* Info.plist */,
 			);
 			path = Plate8037Tests;
@@ -123,6 +126,22 @@
 				B2C003952358784B0015AFFC /* Info.plist */,
 			);
 			path = Plate8037UITests;
+			sourceTree = "<group>";
+		};
+		B2C003A1235879DA0015AFFC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B2C003A2235879EA0015AFFC /* Randomizer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B2C003A423587A130015AFFC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B2C003A523587A220015AFFC /* RandomizerTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C003762358784A0015AFFC /* ViewController.swift in Sources */,
+				B2C003A3235879EA0015AFFC /* Randomizer.swift in Sources */,
 				B2C003722358784A0015AFFC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2C003892358784B0015AFFC /* Plate8037Tests.swift in Sources */,
+				B2C003A623587A220015AFFC /* RandomizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
