@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -18,11 +18,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Plate8037" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="mQl-Wu-2Qj">
-                                <rect key="frame" x="14.5" y="112" width="291.5" height="104"/>
+                                <rect key="frame" x="42" y="161.5" width="291.5" height="104"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAe-83-5db">
                                         <rect key="frame" x="0.0" y="0.0" width="49.5" height="104"/>
@@ -50,13 +50,126 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="myv-dO-nTV">
+                                <rect key="frame" x="16" y="427" width="343" height="232"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Gk-zs-5qd">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhD-rO-P7Z">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="52"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFW-h6-4Xk">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="52"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tri-R6-ukX">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="52"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Tri-R6-ukX" firstAttribute="width" secondItem="NhD-rO-P7Z" secondAttribute="width" id="23k-xM-yoq"/>
+                                            <constraint firstItem="nFW-h6-4Xk" firstAttribute="width" secondItem="NhD-rO-P7Z" secondAttribute="width" id="tFi-yC-MIx"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y2a-aq-Bwx">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raD-LA-7Ed">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="52"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcy-OP-mse">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="52"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQn-Ce-mON">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="52"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lQn-Ce-mON" firstAttribute="width" secondItem="raD-LA-7Ed" secondAttribute="width" id="mhc-vo-zNU"/>
+                                            <constraint firstItem="tcy-OP-mse" firstAttribute="width" secondItem="raD-LA-7Ed" secondAttribute="width" id="taz-ny-T7d"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FMd-Yi-EKi">
+                                        <rect key="frame" x="0.0" y="120" width="343" height="52"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE0-0D-J8k">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="52"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuQ-yh-dBD">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="52"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEK-fq-NjH">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="52"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="FuQ-yh-dBD" firstAttribute="width" secondItem="RE0-0D-J8k" secondAttribute="width" id="RXL-Aj-rDo"/>
+                                            <constraint firstItem="SEK-fq-NjH" firstAttribute="width" secondItem="RE0-0D-J8k" secondAttribute="width" id="qlj-eN-WS6"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-wz-Ia0">
+                                        <rect key="frame" x="0.0" y="180" width="343" height="52"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="mQl-Wu-2Qj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-120" id="4vw-vK-SRc">
-                                <variation key="heightClass=compact" constant="-80"/>
-                            </constraint>
+                            <constraint firstItem="myv-dO-nTV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4eX-Gy-VIk"/>
+                            <constraint firstItem="mQl-Wu-2Qj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-120" id="4vw-vK-SRc"/>
                             <constraint firstItem="mQl-Wu-2Qj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sdu-tL-NUr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="myv-dO-nTV" secondAttribute="bottom" constant="8" id="UMh-o6-TAz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="myv-dO-nTV" secondAttribute="trailing" constant="16" id="ZF9-d9-tF5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -69,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="128"/>
+            <point key="canvasLocation" x="138.75" y="127.8169014084507"/>
         </scene>
     </scenes>
 </document>
