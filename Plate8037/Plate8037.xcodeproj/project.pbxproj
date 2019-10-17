@@ -15,6 +15,8 @@
 		B2C003942358784B0015AFFC /* Plate8037UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003932358784B0015AFFC /* Plate8037UITests.swift */; };
 		B2C003A3235879EA0015AFFC /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003A2235879EA0015AFFC /* Randomizer.swift */; };
 		B2C003A623587A220015AFFC /* RandomizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003A523587A220015AFFC /* RandomizerTests.swift */; };
+		B2C003A823587D230015AFFC /* PrecedingNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003A723587D230015AFFC /* PrecedingNumbers.swift */; };
+		B2C003AA23587DA30015AFFC /* PrecedingNumbersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C003A923587DA30015AFFC /* PrecedingNumbersTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B2C003952358784B0015AFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C003A2235879EA0015AFFC /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		B2C003A523587A220015AFFC /* RandomizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerTests.swift; sourceTree = "<group>"; };
+		B2C003A723587D230015AFFC /* PrecedingNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecedingNumbers.swift; sourceTree = "<group>"; };
+		B2C003A923587DA30015AFFC /* PrecedingNumbersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecedingNumbersTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B2C003A2235879EA0015AFFC /* Randomizer.swift */,
+				B2C003A723587D230015AFFC /* PrecedingNumbers.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				B2C003A523587A220015AFFC /* RandomizerTests.swift */,
+				B2C003A923587DA30015AFFC /* PrecedingNumbersTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 			files = (
 				B2C003762358784A0015AFFC /* ViewController.swift in Sources */,
 				B2C003A3235879EA0015AFFC /* Randomizer.swift in Sources */,
+				B2C003A823587D230015AFFC /* PrecedingNumbers.swift in Sources */,
 				B2C003722358784A0015AFFC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C003AA23587DA30015AFFC /* PrecedingNumbersTests.swift in Sources */,
 				B2C003A623587A220015AFFC /* RandomizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
