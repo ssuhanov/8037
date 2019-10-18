@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     }
     private var correctAnswer: Int = 0
     
+    private var keyboardIsActive: Bool = false
+    
     @IBOutlet weak var firstDigitLabel: UILabel!
     @IBOutlet weak var secondDigitLabel: UILabel!
     @IBOutlet weak var thirdDigitLabel: UILabel!
@@ -42,14 +44,24 @@ class ViewController: UIViewController {
         
         answer = 0
         correctAnswer = resultChecker.correctAnswer()
+        let animationGroup = DispatchGroup()
+        keyboardIsActive = false
+
+        firstDigitLabel.assignWithAnimation(digit: digits.0, animationGroup: animationGroup)
+        secondDigitLabel.assignWithAnimation(digit: digits.1, animationGroup: animationGroup)
+        thirdDigitLabel.assignWithAnimation(digit: digits.2, animationGroup: animationGroup)
+        fourthDigitLabel.assignWithAnimation(digit: digits.3, animationGroup: animationGroup)
         
-        firstDigitLabel.assignWithAnimation(digit: digits.0)
-        secondDigitLabel.assignWithAnimation(digit: digits.1)
-        thirdDigitLabel.assignWithAnimation(digit: digits.2)
-        fourthDigitLabel.assignWithAnimation(digit: digits.3)
+        animationGroup.notify(queue: .main) { [weak self] in
+            self?.keyboardIsActive = true
+        }
     }
     
     @IBAction func numberButtonPressed(_ sender: UIButton) {
+        guard keyboardIsActive else {
+            return
+        }
+        
         answer *= 10
         answer += sender.tag
         
@@ -64,7 +76,8 @@ class ViewController: UIViewController {
 }
 
 extension UILabel {
-    func assignWithAnimation(digit: Int) {
+    func assignWithAnimation(digit: Int, animationGroup: DispatchGroup) {
+        animationGroup.enter()
         let precedingNumbers = PrecedingNumbers().getNumbers(for: digit)
         let animationDuration: TimeInterval = 0.2 + Double(arc4random() % 200) / 1000
         let disappearAnimation: () -> Void = { [weak self] in
@@ -73,10 +86,12 @@ extension UILabel {
         }
         UIView.animate(withDuration: animationDuration,
                        animations: disappearAnimation,
-                       completion: { [weak self] _ in self?.animate(digit: digit, precedingNumbers: precedingNumbers) })
+                       completion: { [weak self] _ in self?.animate(digit: digit,
+                                                                    precedingNumbers: precedingNumbers,
+                                                                    animationGroup: animationGroup) })
     }
     
-    private func animate(digit: Int, precedingNumbers: [Int]) {
+    private func animate(digit: Int, precedingNumbers: [Int], animationGroup: DispatchGroup) {
         transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
         alpha = .zero
         
@@ -105,11 +120,15 @@ extension UILabel {
                                            delay: .zero,
                                            options: .curveEaseOut,
                                            animations: disappearAnimation,
-                                           completion: { _ in self?.animate(digit: digit, precedingNumbers: precedingNumbers) })
+                                           completion: { _ in self?.animate(digit: digit,
+                                                                            precedingNumbers: precedingNumbers,
+                                                                            animationGroup: animationGroup) })
             })
         } else {
             text = "\(digit)"
-            UIView.animate(withDuration: animationDuration, animations: appearAnimation)
+            UIView.animate(withDuration: animationDuration,
+                           animations: appearAnimation,
+                           completion: { _ in animationGroup.leave() })
         }
     }
 }
