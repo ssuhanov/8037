@@ -16,7 +16,7 @@ class PrecedingNumbers {
         
         var result: [Int] = []
         
-        for _ in 0..<10 {
+        for _ in 0..<9 {
             var nextNumber = addedNumber + sign * addition
             while nextNumber < 0 {
                 nextNumber += 10

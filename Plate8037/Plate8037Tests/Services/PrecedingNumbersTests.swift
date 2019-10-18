@@ -18,19 +18,19 @@ class PrecedingNumbersTests: XCTestCase {
     
     func testCorrectNumbers1() {
         let result = instance.getNumbers(for: 8)
-        let correctNumbers = [3, 4, 2, 5, 1, 6, 0, 7, 9, 8]
+        let correctNumbers = [3, 4, 2, 5, 1, 6, 0, 7, 9]
         XCTAssertEqual(result, correctNumbers, "should be correct numbers: \(correctNumbers)")
     }
 
     func testCorrectNumbers2() {
         let result = instance.getNumbers(for: 5)
-        let correctNumbers = [0, 1, 9, 2, 8, 3, 7, 4, 6, 5]
+        let correctNumbers = [0, 1, 9, 2, 8, 3, 7, 4, 6]
         XCTAssertEqual(result, correctNumbers, "should be correct numbers: \(correctNumbers)")
     }
 
     func testCorrectNumbers3() {
         let result = instance.getNumbers(for: 3)
-        let correctNumbers = [8, 9, 7, 0, 6, 1, 5, 2, 4, 3]
+        let correctNumbers = [8, 9, 7, 0, 6, 1, 5, 2, 4]
         XCTAssertEqual(result, correctNumbers, "should be correct numbers: \(correctNumbers)")
     }
 }

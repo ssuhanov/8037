@@ -66,27 +66,43 @@ class ViewController: UIViewController {
 extension UILabel {
     func assignWithAnimation(digit: Int) {
         let precedingNumbers = PrecedingNumbers().getNumbers(for: digit)
-        animate(precedingNumbers: precedingNumbers)
+        animate(digit: digit, precedingNumbers: precedingNumbers)
     }
     
-    private func animate(precedingNumbers: [Int]) {
+    private func animate(digit: Int, precedingNumbers: [Int]) {
         transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
         alpha = .zero
+        
+        let appearAnimation: () -> Void = { [weak self] in
+            self?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            self?.alpha = 1.0
+        }
+        
+        let disappearAnimation: () -> Void = { [weak self] in
+            self?.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            self?.alpha = .zero
+        }
         var precedingNumbers = precedingNumbers
+        let animationDuration: TimeInterval = 0.2 + Double(arc4random() % 200) / 1000
         if let nextNumber = precedingNumbers.first {
-            self.text = "\(nextNumber)"
             precedingNumbers = Array(precedingNumbers.dropFirst())
-            
-            let animationDuration: TimeInterval = 0.2 + Double(arc4random() % 3) / 10
+
+            text = "\(nextNumber)"
             UIView.animate(withDuration: animationDuration,
-                           animations: { [weak self] in
-                            self?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                            self?.alpha = 1.0
-                },
-                           completion: { [weak self] _ in self?.animate(precedingNumbers: precedingNumbers) })
+                           delay: .zero,
+                           options: .curveEaseIn,
+                           animations: appearAnimation,
+                           completion: { [weak self] _ in
+                            
+                            UIView.animate(withDuration: animationDuration,
+                                           delay: .zero,
+                                           options: .curveEaseOut,
+                                           animations: disappearAnimation,
+                                           completion: { _ in self?.animate(digit: digit, precedingNumbers: precedingNumbers) })
+            })
         } else {
-            transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            alpha = 1.0
+            text = "\(digit)"
+            UIView.animate(withDuration: animationDuration, animations: appearAnimation)
         }
     }
 }
