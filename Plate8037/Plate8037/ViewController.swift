@@ -8,6 +8,9 @@
 
 import UIKit
 
+private let SignShowingDuration: TimeInterval = 2.0
+private let SignShowingInterval: TimeInterval = 5.0
+
 class ViewController: UIViewController {
 
     private var answer: Int = 0 {
@@ -23,6 +26,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondDigitLabel: UILabel!
     @IBOutlet weak var thirdDigitLabel: UILabel!
     @IBOutlet weak var fourthDigitLabel: UILabel!
+    
+    @IBOutlet weak var firstSignLabel: UILabel!
+    @IBOutlet weak var secondSignLabel: UILabel!
+    @IBOutlet weak var thirdSignLabel: UILabel!
+    
     @IBOutlet weak var answerLabel: UILabel!
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -31,6 +39,13 @@ class ViewController: UIViewController {
         } else {
             return .default
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        firstSignLabel.alpha = .zero
+        secondSignLabel.alpha = .zero
+        thirdSignLabel.alpha = .zero
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +61,10 @@ class ViewController: UIViewController {
         correctAnswer = resultChecker.correctAnswer()
         let animationGroup = DispatchGroup()
         keyboardIsActive = false
+        hideSign(signLabel: firstSignLabel, withDelay: .zero)
+        hideSign(signLabel: secondSignLabel, withDelay: .zero)
+        hideSign(signLabel: thirdSignLabel, withDelay: .zero)
+        returnDigits(withDelay: .zero)
 
         firstDigitLabel.assignWithAnimation(digit: digits.0, animationGroup: animationGroup)
         secondDigitLabel.assignWithAnimation(digit: digits.1, animationGroup: animationGroup)
@@ -54,7 +73,68 @@ class ViewController: UIViewController {
         
         animationGroup.notify(queue: .main) { [weak self] in
             self?.keyboardIsActive = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self?.animateSignsAndDigits()
+            }
         }
+    }
+    
+    private func animateSignsAndDigits() {
+        guard keyboardIsActive else {
+            return
+        }
+        
+        animateSign()
+        animateDigits()
+        DispatchQueue.main.asyncAfter(deadline: .now() + SignShowingInterval) { [weak self] in
+            self?.animateSignsAndDigits()
+        }
+    }
+    
+    private func animateSign() {
+        showSign(signLabel: secondSignLabel)
+    }
+    
+    private func showSign(signLabel: UILabel) {
+        UIView.animate(withDuration: SignShowingDuration/3.0,
+                       animations: { signLabel.alpha = 1.0 },
+                       completion: { [weak self] _ in self?.hideSign(signLabel: signLabel, withDelay: SignShowingDuration/3.0) })
+    }
+    
+    private func hideSign(signLabel: UILabel, withDelay delay: TimeInterval) {
+        UIView.animate(withDuration: SignShowingDuration/3.0,
+                       delay: delay,
+                       animations: { signLabel.alpha = .zero })
+    }
+    
+    private func animateDigits() {
+        moveDigits()
+    }
+    
+    private func moveDigits() {
+        UIView.animate(withDuration: SignShowingDuration/3.0,
+                       animations: { [weak self] in
+                        let translationValue: CGFloat = 15.0
+                        let transform1 = CGAffineTransform(translationX: translationValue, y: .zero)
+                        let transform2 = CGAffineTransform(translationX: -translationValue, y: .zero)
+                        self?.firstDigitLabel.transform = transform1
+                        self?.secondDigitLabel.transform = transform2
+                        self?.thirdDigitLabel.transform = transform1
+                        self?.fourthDigitLabel.transform = transform2
+        },
+                       completion: { [weak self] _ in self?.returnDigits(withDelay: SignShowingDuration/3.0) })
+    }
+    
+    private func returnDigits(withDelay delay: TimeInterval) {
+        UIView.animate(withDuration: SignShowingDuration/3.0,
+                       delay: delay,
+                       animations: { [weak self] in
+                        let transform = CGAffineTransform(translationX: .zero, y: .zero)
+                        self?.firstDigitLabel.transform = transform
+                        self?.secondDigitLabel.transform = transform
+                        self?.thirdDigitLabel.transform = transform
+                        self?.fourthDigitLabel.transform = transform
+        })
     }
     
     @IBAction func numberButtonPressed(_ sender: UIButton) {
