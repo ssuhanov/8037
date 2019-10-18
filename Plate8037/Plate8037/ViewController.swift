@@ -66,7 +66,14 @@ class ViewController: UIViewController {
 extension UILabel {
     func assignWithAnimation(digit: Int) {
         let precedingNumbers = PrecedingNumbers().getNumbers(for: digit)
-        animate(digit: digit, precedingNumbers: precedingNumbers)
+        let animationDuration: TimeInterval = 0.2 + Double(arc4random() % 200) / 1000
+        let disappearAnimation: () -> Void = { [weak self] in
+            self?.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            self?.alpha = .zero
+        }
+        UIView.animate(withDuration: animationDuration,
+                       animations: disappearAnimation,
+                       completion: { [weak self] _ in self?.animate(digit: digit, precedingNumbers: precedingNumbers) })
     }
     
     private func animate(digit: Int, precedingNumbers: [Int]) {
