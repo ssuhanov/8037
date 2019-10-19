@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     
     private var keyboardIsActive: Bool = false
     
+    private var signsAnimationTimer: Timer?
+    
     @IBOutlet weak var firstDigitLabel: UILabel!
     @IBOutlet weak var secondDigitLabel: UILabel!
     @IBOutlet weak var thirdDigitLabel: UILabel!
@@ -61,10 +63,7 @@ class ViewController: UIViewController {
         correctAnswer = resultChecker.correctAnswer()
         let animationGroup = DispatchGroup()
         keyboardIsActive = false
-        hideSign(signLabel: firstSignLabel, withDelay: .zero)
-        hideSign(signLabel: secondSignLabel, withDelay: .zero)
-        hideSign(signLabel: thirdSignLabel, withDelay: .zero)
-        returnDigits(withDelay: .zero)
+        signsAnimationTimer?.invalidate()
 
         firstDigitLabel.assignWithAnimation(digit: digits.0, animationGroup: animationGroup)
         secondDigitLabel.assignWithAnimation(digit: digits.1, animationGroup: animationGroup)
@@ -75,6 +74,10 @@ class ViewController: UIViewController {
             self?.keyboardIsActive = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self?.animateSignsAndDigits()
+                self?.signsAnimationTimer?.invalidate()
+                self?.signsAnimationTimer = Timer.scheduledTimer(withTimeInterval: SignShowingInterval, repeats: true) { _ in
+                    self?.animateSignsAndDigits()
+                }
             }
         }
     }
@@ -86,9 +89,6 @@ class ViewController: UIViewController {
         
         animateSign()
         animateDigits()
-        DispatchQueue.main.asyncAfter(deadline: .now() + SignShowingInterval) { [weak self] in
-            self?.animateSignsAndDigits()
-        }
     }
     
     private func animateSign() {
