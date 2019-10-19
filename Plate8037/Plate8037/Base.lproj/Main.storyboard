@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -21,104 +21,160 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Plate8037" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAe-83-5db">
-                                <rect key="frame" x="-5" y="112" width="60" height="104"/>
+                                <rect key="frame" x="139" y="394" width="100" height="166"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Upm-e0-bg7"/>
+                                    <constraint firstAttribute="width" constant="60" id="Upm-e0-bg7">
+                                        <variation key="widthClass=regular" constant="100"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="100"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="160"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmm-47-WjF">
-                                <rect key="frame" x="55" y="126.5" width="30" height="75"/>
+                                <rect key="frame" x="239" y="415" width="52" height="124.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Mda-RX-N8l"/>
+                                    <constraint firstAttribute="width" constant="30" id="Mda-RX-N8l">
+                                        <variation key="widthClass=regular" constant="52"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="72"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="120"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3o-Oi-hCl">
-                                <rect key="frame" x="85" y="112" width="60" height="104"/>
+                                <rect key="frame" x="291" y="394" width="100" height="166"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="dcH-X5-dg7"/>
+                                    <constraint firstAttribute="width" constant="60" id="dcH-X5-dg7">
+                                        <variation key="widthClass=regular" constant="100"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="100"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="160"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq9-b3-akC">
-                                <rect key="frame" x="145" y="126.5" width="30" height="75"/>
+                                <rect key="frame" x="391" y="415" width="52" height="124.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="9zF-Nn-6h8"/>
+                                    <constraint firstAttribute="width" constant="30" id="9zF-Nn-6h8">
+                                        <variation key="widthClass=regular" constant="52"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="72"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="120"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22P-kE-nxj">
-                                <rect key="frame" x="175" y="112" width="60" height="104"/>
+                                <rect key="frame" x="443" y="394" width="100" height="166"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Rwa-eq-fxQ"/>
+                                    <constraint firstAttribute="width" constant="60" id="Rwa-eq-fxQ">
+                                        <variation key="widthClass=regular" constant="100"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="100"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="160"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afr-mr-k0B">
+                                <rect key="frame" x="543" y="415" width="52" height="124.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Qnk-px-Wbv">
+                                        <variation key="widthClass=regular" constant="52"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="72"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="120"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgn-R7-Cwe">
-                                <rect key="frame" x="265" y="112" width="60" height="104"/>
+                                <rect key="frame" x="595" y="394" width="100" height="166"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="HFV-Lu-0Sn"/>
+                                    <constraint firstAttribute="width" constant="60" id="HFV-Lu-0Sn">
+                                        <variation key="widthClass=regular" constant="100"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="100"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="160"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efr-1k-pvn">
-                                <rect key="frame" x="131" y="256.5" width="58.5" height="55.5"/>
+                                <rect key="frame" x="359" y="575.5" width="116.5" height="110.5"/>
                                 <fontDescription key="fontDescription" name="RedDelicious3D" family="Red Delicious 3D" pointSize="50"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="RedDelicious3D" family="Red Delicious 3D" pointSize="100"/>
+                                </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="myv-dO-nTV">
-                                <rect key="frame" x="16" y="328" width="288" height="232"/>
+                                <rect key="frame" x="16" y="702" width="802" height="464"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Gk-zs-5qd">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="802" height="110"/>
                                         <subviews>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhD-rO-P7Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="52"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="110"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                                 <state key="normal" title="7">
                                                     <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bo4-yg-yeD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFW-h6-4Xk">
-                                                <rect key="frame" x="98.5" y="0.0" width="91" height="52"/>
+                                                <rect key="frame" x="270" y="0.0" width="262" height="110"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                                 <state key="normal" title="8">
                                                     <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ms-SU-IPR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tri-R6-ukX">
-                                                <rect key="frame" x="197.5" y="0.0" width="90.5" height="52"/>
+                                                <rect key="frame" x="540" y="0.0" width="262" height="110"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                                 <state key="normal" title="9">
                                                     <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kII-bE-avD"/>
                                                 </connections>
@@ -126,41 +182,52 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Tri-R6-ukX" firstAttribute="width" secondItem="NhD-rO-P7Z" secondAttribute="width" id="23k-xM-yoq"/>
+                                            <constraint firstItem="Tri-R6-ukX" firstAttribute="height" secondItem="NhD-rO-P7Z" secondAttribute="height" id="FTO-3W-nyf"/>
+                                            <constraint firstItem="nFW-h6-4Xk" firstAttribute="height" secondItem="NhD-rO-P7Z" secondAttribute="height" id="QD5-7e-6BA"/>
                                             <constraint firstItem="nFW-h6-4Xk" firstAttribute="width" secondItem="NhD-rO-P7Z" secondAttribute="width" id="tFi-yC-MIx"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y2a-aq-Bwx">
-                                        <rect key="frame" x="0.0" y="60" width="288" height="52"/>
+                                        <rect key="frame" x="0.0" y="118" width="802" height="110"/>
                                         <subviews>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raD-LA-7Ed">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="52"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="110"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                                 <state key="normal" title="4">
                                                     <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VJv-JB-sKZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcy-OP-mse">
-                                                <rect key="frame" x="98.5" y="0.0" width="91" height="52"/>
+                                                <rect key="frame" x="270" y="0.0" width="262" height="110"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                                 <state key="normal" title="5">
                                                     <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="slB-WB-gcu"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQn-Ce-mON">
-                                                <rect key="frame" x="197.5" y="0.0" width="90.5" height="52"/>
+                                                <rect key="frame" x="540" y="0.0" width="262" height="110"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                                 <state key="normal" title="6">
                                                     <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P98-ea-b35"/>
                                                 </connections>
@@ -172,37 +239,46 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FMd-Yi-EKi">
-                                        <rect key="frame" x="0.0" y="120" width="288" height="52"/>
+                                        <rect key="frame" x="0.0" y="236" width="802" height="110"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE0-0D-J8k">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="52"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="110"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P4g-oQ-5mx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuQ-yh-dBD">
-                                                <rect key="frame" x="98.5" y="0.0" width="91" height="52"/>
+                                                <rect key="frame" x="270" y="0.0" width="262" height="110"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                                 <state key="normal" title="2">
                                                     <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cyb-bD-hha"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEK-fq-NjH">
-                                                <rect key="frame" x="197.5" y="0.0" width="90.5" height="52"/>
+                                                <rect key="frame" x="540" y="0.0" width="262" height="110"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                                 <state key="normal" title="3">
                                                     <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W48-JI-igO"/>
                                                 </connections>
@@ -214,69 +290,88 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-wz-Ia0">
-                                        <rect key="frame" x="0.0" y="180" width="288" height="52"/>
+                                        <rect key="frame" x="0.0" y="354" width="802" height="110"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="38"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="80"/>
+                                        </variation>
                                         <connections>
                                             <action selector="numberButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ebl-Uy-vIl"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afr-mr-k0B">
-                                <rect key="frame" x="235" y="126.5" width="30" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Qnk-px-Wbv"/>
+                                    <constraint firstItem="tcy-OP-mse" firstAttribute="height" secondItem="NhD-rO-P7Z" secondAttribute="height" id="1ff-FL-hPJ"/>
+                                    <constraint firstItem="SEK-fq-NjH" firstAttribute="height" secondItem="NhD-rO-P7Z" secondAttribute="height" id="4l0-8q-fc0"/>
+                                    <constraint firstAttribute="height" constant="232" id="8bi-sW-FiD">
+                                        <variation key="widthClass=regular" constant="464"/>
+                                    </constraint>
+                                    <constraint firstItem="RE0-0D-J8k" firstAttribute="height" secondItem="NhD-rO-P7Z" secondAttribute="height" id="Mne-Ql-2Zn"/>
+                                    <constraint firstItem="lQn-Ce-mON" firstAttribute="height" secondItem="NhD-rO-P7Z" secondAttribute="height" id="NgK-CY-1gk"/>
+                                    <constraint firstItem="FuQ-yh-dBD" firstAttribute="height" secondItem="NhD-rO-P7Z" secondAttribute="height" id="hkZ-D9-8gf"/>
+                                    <constraint firstItem="cR9-wz-Ia0" firstAttribute="height" secondItem="NhD-rO-P7Z" secondAttribute="height" id="mD2-gM-rLm"/>
+                                    <constraint firstItem="raD-LA-7Ed" firstAttribute="height" secondItem="NhD-rO-P7Z" secondAttribute="height" id="xNM-uP-OYx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="72"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mg-NP-sG6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-9O-87b">
-                                <rect key="frame" x="20" y="134" width="280" height="180"/>
+                                <rect key="frame" x="157" y="377" width="520" height="320"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOT THIS TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoZ-VW-slZ">
-                                        <rect key="frame" x="13.5" y="8" width="253.5" height="41.5"/>
+                                        <rect key="frame" x="32.5" y="8" width="455.5" height="75"/>
                                         <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="40"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="72"/>
+                                        </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PD-6E-2q5">
-                                        <rect key="frame" x="69.5" y="131" width="141" height="41"/>
+                                        <rect key="frame" x="114.5" y="234" width="291" height="78"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="24"/>
-                                        <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
+                                        <inset key="contentEdgeInsets" minX="28" minY="12" maxX="28" maxY="12"/>
                                         <inset key="imageEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Try again">
                                             <color key="titleColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="52"/>
+                                        </variation>
                                         <connections>
                                             <action selector="alertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V8x-Br-PhA"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're right!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCN-YP-nor">
-                                        <rect key="frame" x="68.5" y="73.5" width="143.5" height="25"/>
+                                        <rect key="frame" x="105" y="107" width="310" height="54"/>
                                         <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="24"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" name="RedDeliciousAcademy" family="Red Delicious Academy" pointSize="52"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93466550110000002" green="0.47382450100000001" blue="0.23128834370000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="JCN-YP-nor" firstAttribute="top" secondItem="hoZ-VW-slZ" secondAttribute="bottom" constant="24" id="Ase-uZ-cMm"/>
-                                    <constraint firstAttribute="width" constant="280" id="OTd-nr-I1v"/>
+                                    <constraint firstAttribute="width" constant="280" id="OTd-nr-I1v">
+                                        <variation key="widthClass=regular" constant="520"/>
+                                    </constraint>
                                     <constraint firstItem="JCN-YP-nor" firstAttribute="centerX" secondItem="vEN-9O-87b" secondAttribute="centerX" id="UCh-Su-roa"/>
                                     <constraint firstAttribute="bottom" secondItem="3PD-6E-2q5" secondAttribute="bottom" constant="8" id="X05-A0-yGv"/>
                                     <constraint firstItem="hoZ-VW-slZ" firstAttribute="centerX" secondItem="vEN-9O-87b" secondAttribute="centerX" id="ZY2-gO-MY0"/>
                                     <constraint firstItem="hoZ-VW-slZ" firstAttribute="top" secondItem="vEN-9O-87b" secondAttribute="top" constant="8" id="pQU-2Q-SVx"/>
-                                    <constraint firstAttribute="height" constant="180" id="tba-gA-YJ0"/>
+                                    <constraint firstAttribute="height" constant="180" id="tba-gA-YJ0">
+                                        <variation key="widthClass=regular" constant="320"/>
+                                    </constraint>
                                     <constraint firstItem="3PD-6E-2q5" firstAttribute="centerX" secondItem="vEN-9O-87b" secondAttribute="centerX" id="whX-d0-tQV"/>
                                 </constraints>
                             </view>
