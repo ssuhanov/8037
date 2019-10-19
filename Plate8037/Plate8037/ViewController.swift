@@ -34,6 +34,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var thirdSignLabel: UILabel!
     
     @IBOutlet weak var answerLabel: UILabel!
+    
+    #warning("TODO: - should be a separate class RoundCornerButton and these outlets shold be gone")
+    @IBOutlet weak var zeroDigitButton: UIButton!
+    @IBOutlet weak var oneDigitButton: UIButton!
+    @IBOutlet weak var twoDigitButton: UIButton!
+    @IBOutlet weak var threeDigitButton: UIButton!
+    @IBOutlet weak var fourDigitButton: UIButton!
+    @IBOutlet weak var fiveDigitButton: UIButton!
+    @IBOutlet weak var sixDigitButton: UIButton!
+    @IBOutlet weak var sevenDigitButton: UIButton!
+    @IBOutlet weak var eightDigitButton: UIButton!
+    @IBOutlet weak var nineDigitButton: UIButton!
+
+    @IBOutlet weak var alertBackgroundView: UIView!
+    @IBOutlet weak var alertView: UIView!
+    @IBOutlet weak var alertTitleLabel: UILabel!
+    @IBOutlet weak var alertDescriptionLabel: UILabel!
+    @IBOutlet weak var alertButton: UIButton!
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         if #available(iOS 13.0, *) {
@@ -48,6 +66,30 @@ class ViewController: UIViewController {
         firstSignLabel.alpha = .zero
         secondSignLabel.alpha = .zero
         thirdSignLabel.alpha = .zero
+        alertBackgroundView.alpha = .zero
+        alertBackgroundView.isHidden = true
+        alertView.alpha = .zero
+        alertView.isHidden = true
+
+        roundCorners(view: zeroDigitButton)
+        roundCorners(view: oneDigitButton)
+        roundCorners(view: twoDigitButton)
+        roundCorners(view: threeDigitButton)
+        roundCorners(view: fourDigitButton)
+        roundCorners(view: fiveDigitButton)
+        roundCorners(view: sixDigitButton)
+        roundCorners(view: sevenDigitButton)
+        roundCorners(view: eightDigitButton)
+        roundCorners(view: nineDigitButton)
+
+        roundCorners(view: alertView)
+        roundCorners(view: alertButton)
+    }
+    
+    private func roundCorners(view: UIView) {
+        view.layer.cornerRadius = 8.0
+        view.layer.masksToBounds = true
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +105,6 @@ class ViewController: UIViewController {
         correctAnswer = resultChecker.correctAnswer()
         let animationGroup = DispatchGroup()
         keyboardIsActive = false
-        signsAnimationTimer?.invalidate()
 
         firstDigitLabel.assignWithAnimation(digit: digits.0, animationGroup: animationGroup)
         secondDigitLabel.assignWithAnimation(digit: digits.1, animationGroup: animationGroup)
@@ -72,12 +113,10 @@ class ViewController: UIViewController {
         
         animationGroup.notify(queue: .main) { [weak self] in
             self?.keyboardIsActive = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self?.animateSignsAndDigits()
+            self?.signsAnimationTimer?.invalidate()
+            self?.signsAnimationTimer = Timer.scheduledTimer(withTimeInterval: SignShowingInterval, repeats: true) { _ in
                 self?.animateSignsAndDigits()
-                self?.signsAnimationTimer?.invalidate()
-                self?.signsAnimationTimer = Timer.scheduledTimer(withTimeInterval: SignShowingInterval, repeats: true) { _ in
-                    self?.animateSignsAndDigits()
-                }
             }
         }
     }
@@ -146,12 +185,65 @@ class ViewController: UIViewController {
         answer += sender.tag
         
         if answer == correctAnswer {
-            showAlert(title: "CONGRATULATIONS!", message: "You're right!")
-            startAgain()
+            showAlertView(type: .correctAnswer)
         } else if answer >= correctAnswer {
-            showAlert(title: "SORRY", message: "You're wrong, try again")
-            startAgain()
+            showAlertView(type: .wrongAnswer)
         }
+    }
+    
+    @IBAction func alertButtonPressed(_ sender: UIButton) {
+        hideAlertViewWithAnimation()
+        startAgain()
+    }
+    
+    enum AlertType {
+        case correctAnswer
+        case wrongAnswer
+    }
+    
+    private func showAlertView(type: AlertType) {
+        signsAnimationTimer?.invalidate()
+        let correctTitles = ["HOORAY!", "YEAAAH!", "CORRECT!"]
+        let incorrectTitles = ["SORRY", "OH, NO", "NOT THIS TIME"]
+        
+        let titleIndex = Int(arc4random() % 3)
+        
+        switch type {
+        case .correctAnswer:
+            alertTitleLabel.text = correctTitles[titleIndex]
+            alertDescriptionLabel.text = "You're right!"
+            alertButton.setTitle("The next", for: .normal)
+        case .wrongAnswer:
+            alertTitleLabel.text = incorrectTitles[titleIndex]
+            alertDescriptionLabel.text = "You can do better!"
+            alertButton.setTitle("Try again", for: .normal)
+        }
+        
+        showAlertViewWithAnimation()
+    }
+    
+    private func showAlertViewWithAnimation() {
+        alertBackgroundView.isHidden = false
+        alertView.isHidden = false
+        alertView.transform = CGAffineTransform(translationX: .zero, y: 160.0)
+        UIView.animate(withDuration: 0.2,
+                       animations: { [weak self] in
+                        self?.alertBackgroundView.alpha = 0.66
+                        self?.alertView.alpha = 1.0
+                        self?.alertView.transform = CGAffineTransform(translationX: .zero, y: .zero)
+        })
+    }
+    
+    private func hideAlertViewWithAnimation() {
+        UIView.animate(withDuration: 0.2,
+                       animations: { [weak self] in
+                        self?.alertBackgroundView.alpha = .zero
+                        self?.alertView.alpha = .zero
+            },
+                       completion: { [weak self] _ in
+                        self?.alertBackgroundView.isHidden = true
+                        self?.alertView.isHidden = true
+        })
     }
 }
 
@@ -211,17 +303,4 @@ extension UILabel {
                            completion: { _ in animationGroup.leave() })
         }
     }
-}
-
-extension UIViewController {
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        self.present(alertController, animated: true) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak alertController] in
-                alertController?.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-
 }
