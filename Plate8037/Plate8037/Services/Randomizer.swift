@@ -10,27 +10,14 @@ import Foundation
 
 class Randomizer {
     func getDigits() -> (Int, Int, Int, Int) {
-        let maxNumber:UInt32 = 9
-        var firstDigit = Int(arc4random_uniform(maxNumber))
-        while firstDigit == .zero {
-            firstDigit = Int(arc4random_uniform(maxNumber))
-        }
-        
-        var secondDigit = Int(arc4random_uniform(maxNumber))
-        while secondDigit == .zero || secondDigit == firstDigit {
-            secondDigit = Int(arc4random_uniform(maxNumber))
-        }
-        
-        var thirdDigit = Int(arc4random_uniform(maxNumber))
-        while thirdDigit == .zero || thirdDigit == firstDigit || thirdDigit == secondDigit {
-            thirdDigit = Int(arc4random_uniform(maxNumber))
-        }
-        
-        var fourthDigit = Int(arc4random_uniform(maxNumber))
-        while fourthDigit == .zero || fourthDigit == thirdDigit || fourthDigit == secondDigit || fourthDigit == firstDigit {
-            fourthDigit = Int(arc4random_uniform(maxNumber))
-        }
-        
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9].shuffled()
+        let firstDigit = numbers[0]
+        numbers = Array(numbers.dropFirst()).shuffled()
+        let secondDigit = numbers[0]
+        numbers = Array(numbers.dropFirst())
+        let thirdDigit = numbers[0]
+        numbers = Array(numbers.dropFirst())
+        let fourthDigit = numbers[0]
         return (firstDigit, secondDigit, thirdDigit, fourthDigit)
     }
 }
