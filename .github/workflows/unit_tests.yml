@@ -19,8 +19,5 @@ jobs:
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
-      - name: Build App
-        run: bundle exec fastlane unit_tests_build_for_testing
-
-      - name: Run Unit-Tests
-        run: bundle exec fastlane unit_tests_run_without_building
+      - name: Build App and run Unit-Tests
+        run: bundle exec fastlane unit_tests

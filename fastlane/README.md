@@ -13,6 +13,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
+### unit_tests
+
+```sh
+[bundle exec] fastlane unit_tests
+```
+
+Build App and run Unit-Tests
+
 ### unit_tests_build_for_testing
 
 ```sh

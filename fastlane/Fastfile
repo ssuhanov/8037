@@ -1,3 +1,13 @@
+desc "Build App and run Unit-Tests"
+lane :unit_tests do
+  scan(
+    device: ENV['TESTING_DEVICE'],
+    scheme: ENV['TESTING_SCHEME'],
+    project: ENV['PROJECT'],
+    clean: true
+  )
+end
+
 desc "Build Unit-tests"
 lane :unit_tests_build_for_testing do
   scan(
