@@ -31,3 +31,7 @@ Plate8037.xcworkspace/contents.xcworkspacedata
 ## Fastlane
 fastlane/report.xml
 fastlane/test_output
+
+## Bundler
+.bundle/
+vendor/

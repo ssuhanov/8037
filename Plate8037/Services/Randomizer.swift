@@ -9,28 +9,29 @@
 import Foundation
 
 class Randomizer {
+  // swiftlint:disable:next large_tuple
   func getDigits() -> (Int, Int, Int, Int) {
-    let maxNumber:UInt32 = 9
-    var firstDigit = Int(arc4random_uniform(maxNumber))
+    let maxNumber: Int = 9
+    var firstDigit = Int.random(in: 1...maxNumber)
     while firstDigit == .zero {
-      firstDigit = Int(arc4random_uniform(maxNumber))
+      firstDigit = Int.random(in: 1...maxNumber)
     }
-    
-    var secondDigit = Int(arc4random_uniform(maxNumber))
+
+    var secondDigit = Int.random(in: 1...maxNumber)
     while secondDigit == .zero || secondDigit == firstDigit {
-      secondDigit = Int(arc4random_uniform(maxNumber))
+      secondDigit = Int.random(in: 1...maxNumber)
     }
-    
-    var thirdDigit = Int(arc4random_uniform(maxNumber))
+
+    var thirdDigit = Int.random(in: 1...maxNumber)
     while thirdDigit == .zero || thirdDigit == firstDigit || thirdDigit == secondDigit {
-      thirdDigit = Int(arc4random_uniform(maxNumber))
+      thirdDigit = Int.random(in: 1...maxNumber)
     }
-    
-    var fourthDigit = Int(arc4random_uniform(maxNumber))
+
+    var fourthDigit = Int.random(in: 1...maxNumber)
     while fourthDigit == .zero || fourthDigit == thirdDigit || fourthDigit == secondDigit || fourthDigit == firstDigit {
-      fourthDigit = Int(arc4random_uniform(maxNumber))
+      fourthDigit = Int.random(in: 1...maxNumber)
     }
-    
+
     return (firstDigit, secondDigit, thirdDigit, fourthDigit)
   }
 }

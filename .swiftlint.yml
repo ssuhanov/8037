@@ -1,0 +1,76 @@
+opt_in_rules:
+  - cyclomatic_complexity
+  - line_length
+  - type_name
+  - shorthand_operator
+  - closure_end_indentation
+  - closure_spacing
+  - empty_count
+  - explicit_init
+  - fatal_error_message
+  - first_where
+  - force_cast
+  - force_try
+  - force_unwrapping
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - multiline_parameters
+  - vertical_parameter_alignment_on_call
+  - joined_default_parameter
+  - unneeded_parentheses_in_closure_argument
+  - trailing_whitespace
+  - sorted_first_last
+  - reduce_into
+  - reduce_boolean
+  - last_where
+  - flatmap_over_map_reduce
+  - empty_string
+  - empty_collection_literal
+  - contains_over_filter_is_empty
+  - contains_over_filter_count
+  - type_body_length
+
+disabled_rules:
+  # - implicitly_unwrapped_optional
+  # - function_parameter_count
+  # - file_length
+  # - file_header
+  # - opening_brace
+  # - todo
+  # - inclusive_language
+  # - identifier_name
+  # - empty_enum_arguments
+  # - for_where
+
+excluded:
+  - fastlane
+  - scripts
+  - vendor
+  - .git
+
+type_name:
+  warning: 80
+  error: 80
+
+function_body_length:
+  warning: 50
+  error: 50
+
+type_body_length:
+  warning: 500
+  error: 500
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+
+deployment_target:
+  iOS_deployment_target: 13.0
+
+custom_rules:
+  private_ibaction:
+    name: "Private @IBAction"
+    regex: "@IBAction\\s+func"
+    message: "@IBAction should be private"
+    severity: warning
