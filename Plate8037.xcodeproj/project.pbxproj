@@ -154,6 +154,7 @@
 			buildConfigurationList = B2C003982358784B0015AFFC /* Build configuration list for PBXNativeTarget "Plate8037" */;
 			buildPhases = (
 				B2D747EB2AB9FF4D008068DD /* Swiftlint */,
+				B24CE9A32ABA132400B162B2 /* Swiftformat */,
 				B2C0036A2358784A0015AFFC /* Sources */,
 				B2C0036B2358784A0015AFFC /* Frameworks */,
 				B2C0036C2358784A0015AFFC /* Resources */,
@@ -246,6 +247,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B24CE9A32ABA132400B162B2 /* Swiftformat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftformat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ! $CI ]; then\n  if which swiftformat > /dev/null; then\n    swiftformat --config .swiftformat --lint .\n  else\n    echo \"warning: Swiftformat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n  fi\nfi\n";
+		};
 		B2D747EB2AB9FF4D008068DD /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;

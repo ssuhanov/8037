@@ -26,5 +26,8 @@ jobs:
       - name: Installing Swiftlint
         run: sh bootstrap.sh install_swiftlint
 
+      - name: Installing Swiftformat
+        run: sh bootstrap.sh install_swiftformat
+
       - name: Run Danger
         run: bundle exec danger --fail-on-errors=true

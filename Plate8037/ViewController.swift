@@ -19,40 +19,41 @@ class ViewController: UIViewController {
       answerLabel.text = (answer == 0) ? "" : "\(answer)"
     }
   }
+
   private var correctAnswer: Int = 0
 
   private var keyboardIsActive: Bool = false
 
   private var signsAnimationTimer: Timer?
 
-  @IBOutlet weak var firstDigitLabel: UILabel!
-  @IBOutlet weak var secondDigitLabel: UILabel!
-  @IBOutlet weak var thirdDigitLabel: UILabel!
-  @IBOutlet weak var fourthDigitLabel: UILabel!
+  @IBOutlet var firstDigitLabel: UILabel!
+  @IBOutlet var secondDigitLabel: UILabel!
+  @IBOutlet var thirdDigitLabel: UILabel!
+  @IBOutlet var fourthDigitLabel: UILabel!
 
-  @IBOutlet weak var firstSignLabel: UILabel!
-  @IBOutlet weak var secondSignLabel: UILabel!
-  @IBOutlet weak var thirdSignLabel: UILabel!
+  @IBOutlet var firstSignLabel: UILabel!
+  @IBOutlet var secondSignLabel: UILabel!
+  @IBOutlet var thirdSignLabel: UILabel!
 
-  @IBOutlet weak var answerLabel: UILabel!
+  @IBOutlet var answerLabel: UILabel!
 
-#warning("TODO: - should be a separate class RoundCornerButton and these outlets shold be gone")
-  @IBOutlet weak var zeroDigitButton: UIButton!
-  @IBOutlet weak var oneDigitButton: UIButton!
-  @IBOutlet weak var twoDigitButton: UIButton!
-  @IBOutlet weak var threeDigitButton: UIButton!
-  @IBOutlet weak var fourDigitButton: UIButton!
-  @IBOutlet weak var fiveDigitButton: UIButton!
-  @IBOutlet weak var sixDigitButton: UIButton!
-  @IBOutlet weak var sevenDigitButton: UIButton!
-  @IBOutlet weak var eightDigitButton: UIButton!
-  @IBOutlet weak var nineDigitButton: UIButton!
+  #warning("TODO: - should be a separate class RoundCornerButton and these outlets shold be gone")
+  @IBOutlet var zeroDigitButton: UIButton!
+  @IBOutlet var oneDigitButton: UIButton!
+  @IBOutlet var twoDigitButton: UIButton!
+  @IBOutlet var threeDigitButton: UIButton!
+  @IBOutlet var fourDigitButton: UIButton!
+  @IBOutlet var fiveDigitButton: UIButton!
+  @IBOutlet var sixDigitButton: UIButton!
+  @IBOutlet var sevenDigitButton: UIButton!
+  @IBOutlet var eightDigitButton: UIButton!
+  @IBOutlet var nineDigitButton: UIButton!
 
-  @IBOutlet weak var alertBackgroundView: UIView!
-  @IBOutlet weak var alertView: UIView!
-  @IBOutlet weak var alertTitleLabel: UILabel!
-  @IBOutlet weak var alertDescriptionLabel: UILabel!
-  @IBOutlet weak var alertButton: UIButton!
+  @IBOutlet var alertBackgroundView: UIView!
+  @IBOutlet var alertView: UIView!
+  @IBOutlet var alertTitleLabel: UILabel!
+  @IBOutlet var alertDescriptionLabel: UILabel!
+  @IBOutlet var alertButton: UIButton!
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
     .darkContent
@@ -86,7 +87,6 @@ class ViewController: UIViewController {
   private func roundCorners(view: UIView) {
     view.layer.cornerRadius = 8.0
     view.layer.masksToBounds = true
-
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -145,9 +145,11 @@ class ViewController: UIViewController {
   }
 
   private func hideSign(signLabel: UILabel, withDelay delay: TimeInterval) {
-    UIView.animate(withDuration: Constants.signShowingDuration / 3.0,
-                   delay: delay,
-                   animations: { signLabel.alpha = .zero })
+    UIView.animate(
+      withDuration: Constants.signShowingDuration / 3.0,
+      delay: delay,
+      animations: { signLabel.alpha = .zero }
+    )
   }
 
   private func animateDigits() {
@@ -155,29 +157,33 @@ class ViewController: UIViewController {
   }
 
   private func moveDigits() {
-    UIView.animate(withDuration: Constants.signShowingDuration / 3.0,
-                   animations: { [weak self] in
-      let translationValue: CGFloat = 15.0
-      let transform1 = CGAffineTransform(translationX: translationValue, y: .zero)
-      let transform2 = CGAffineTransform(translationX: -translationValue, y: .zero)
-      self?.firstDigitLabel.transform = transform1
-      self?.secondDigitLabel.transform = transform2
-      self?.thirdDigitLabel.transform = transform1
-      self?.fourthDigitLabel.transform = transform2
-    },
-                   completion: { [weak self] _ in self?.returnDigits(withDelay: Constants.signShowingDuration / 3.0) })
+    UIView.animate(
+      withDuration: Constants.signShowingDuration / 3.0,
+      animations: { [weak self] in
+        let translationValue: CGFloat = 15.0
+        let transform1 = CGAffineTransform(translationX: translationValue, y: .zero)
+        let transform2 = CGAffineTransform(translationX: -translationValue, y: .zero)
+        self?.firstDigitLabel.transform = transform1
+        self?.secondDigitLabel.transform = transform2
+        self?.thirdDigitLabel.transform = transform1
+        self?.fourthDigitLabel.transform = transform2
+      },
+      completion: { [weak self] _ in self?.returnDigits(withDelay: Constants.signShowingDuration / 3.0) }
+    )
   }
 
   private func returnDigits(withDelay delay: TimeInterval) {
-    UIView.animate(withDuration: Constants.signShowingDuration / 3.0,
-                   delay: delay,
-                   animations: { [weak self] in
-      let transform = CGAffineTransform(translationX: .zero, y: .zero)
-      self?.firstDigitLabel.transform = transform
-      self?.secondDigitLabel.transform = transform
-      self?.thirdDigitLabel.transform = transform
-      self?.fourthDigitLabel.transform = transform
-    })
+    UIView.animate(
+      withDuration: Constants.signShowingDuration / 3.0,
+      delay: delay,
+      animations: { [weak self] in
+        let transform = CGAffineTransform(translationX: .zero, y: .zero)
+        self?.firstDigitLabel.transform = transform
+        self?.secondDigitLabel.transform = transform
+        self?.thirdDigitLabel.transform = transform
+        self?.fourthDigitLabel.transform = transform
+      }
+    )
   }
 
   @IBAction private func numberButtonPressed(_ sender: UIButton) {
@@ -195,7 +201,7 @@ class ViewController: UIViewController {
     }
   }
 
-  @IBAction private func alertButtonPressed(_ sender: UIButton) {
+  @IBAction private func alertButtonPressed(_: UIButton) {
     hideAlertViewWithAnimation()
     startAgain()
   }
@@ -230,24 +236,28 @@ class ViewController: UIViewController {
     alertBackgroundView.isHidden = false
     alertView.isHidden = false
     alertView.transform = CGAffineTransform(translationX: .zero, y: 160.0)
-    UIView.animate(withDuration: 0.2,
-                   animations: { [weak self] in
-      self?.alertBackgroundView.alpha = 0.66
-      self?.alertView.alpha = 1.0
-      self?.alertView.transform = CGAffineTransform(translationX: .zero, y: .zero)
-    })
+    UIView.animate(
+      withDuration: 0.2,
+      animations: { [weak self] in
+        self?.alertBackgroundView.alpha = 0.66
+        self?.alertView.alpha = 1.0
+        self?.alertView.transform = CGAffineTransform(translationX: .zero, y: .zero)
+      }
+    )
   }
 
   private func hideAlertViewWithAnimation() {
-    UIView.animate(withDuration: 0.2,
-                   animations: { [weak self] in
-      self?.alertBackgroundView.alpha = .zero
-      self?.alertView.alpha = .zero
-    },
-                   completion: { [weak self] _ in
-      self?.alertBackgroundView.isHidden = true
-      self?.alertView.isHidden = true
-    })
+    UIView.animate(
+      withDuration: 0.2,
+      animations: { [weak self] in
+        self?.alertBackgroundView.alpha = .zero
+        self?.alertView.alpha = .zero
+      },
+      completion: { [weak self] _ in
+        self?.alertBackgroundView.isHidden = true
+        self?.alertView.isHidden = true
+      }
+    )
   }
 }
 
@@ -260,11 +270,17 @@ extension UILabel {
       self?.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
       self?.alpha = .zero
     }
-    UIView.animate(withDuration: animationDuration,
-                   animations: disappearAnimation,
-                   completion: { [weak self] _ in self?.animate(digit: digit,
-                                                                precedingNumbers: precedingNumbers,
-                                                                animationGroup: animationGroup) })
+    UIView.animate(
+      withDuration: animationDuration,
+      animations: disappearAnimation,
+      completion: { [weak self] _ in
+        self?.animate(
+          digit: digit,
+          precedingNumbers: precedingNumbers,
+          animationGroup: animationGroup
+        )
+      }
+    )
   }
 
   private func animate(digit: Int, precedingNumbers: [Int], animationGroup: DispatchGroup) {
@@ -286,25 +302,34 @@ extension UILabel {
       precedingNumbers = Array(precedingNumbers.dropFirst())
 
       text = "\(nextNumber)"
-      UIView.animate(withDuration: animationDuration,
-                     delay: .zero,
-                     options: .curveEaseIn,
-                     animations: appearAnimation,
-                     completion: { [weak self] _ in
-
-        UIView.animate(withDuration: animationDuration,
-                       delay: .zero,
-                       options: .curveEaseOut,
-                       animations: disappearAnimation,
-                       completion: { _ in self?.animate(digit: digit,
-                                                        precedingNumbers: precedingNumbers,
-                                                        animationGroup: animationGroup) })
-      })
+      UIView.animate(
+        withDuration: animationDuration,
+        delay: .zero,
+        options: .curveEaseIn,
+        animations: appearAnimation,
+        completion: { [weak self] _ in
+          UIView.animate(
+            withDuration: animationDuration,
+            delay: .zero,
+            options: .curveEaseOut,
+            animations: disappearAnimation,
+            completion: { _ in
+              self?.animate(
+                digit: digit,
+                precedingNumbers: precedingNumbers,
+                animationGroup: animationGroup
+              )
+            }
+          )
+        }
+      )
     } else {
       text = "\(digit)"
-      UIView.animate(withDuration: animationDuration,
-                     animations: appearAnimation,
-                     completion: { _ in animationGroup.leave() })
+      UIView.animate(
+        withDuration: animationDuration,
+        animations: appearAnimation,
+        completion: { _ in animationGroup.leave() }
+      )
     }
   }
 }
