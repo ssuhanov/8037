@@ -3,6 +3,7 @@
 # Tools versions #
 
 swiftlint_version="0.52.4"
+swiftformat_version="0.52.4"
 
 # Helpers #
 
@@ -37,6 +38,14 @@ tap_swiftlint() {
     swiftlint version
 }
 
+tap_swiftformat() {
+    tap_ios
+    brew install ssuhanov/homebrew-tap-ios/swiftformat@${swiftformat_version}
+    brew reinstall swiftformat@${swiftformat_version} || brew link --overwrite swiftformat@${swiftformat_version}
+    echo "Check Swiftformat version..."
+    swiftformat -version
+}
+
 install_swiftlint() {
     if ! which swiftlint >& /dev/null; then
         echo "Swiftlint is not installed. Installing Swiftlint..."
@@ -53,6 +62,26 @@ install_swiftlint() {
             tap_swiftlint
         else
             echo "Found ${swiftlint_version} version of Swiftlint ✅"
+        fi
+    fi
+}
+
+install_swiftformat() {
+    if ! which swiftformat >& /dev/null; then
+        echo "Swiftformat is not installed. Installing Swiftformat..."
+        if which brew >& /dev/null; then
+            tap_swiftformat
+        else
+            echo "Failed to install Swiftformat. Please install manually ❌"
+            exit 1
+        fi
+    else
+        if ! swiftformat -version | grep -q $swiftformat_version; then
+            echo "Invalid Swiftformat version. ${swiftformat_version} expected. Reinstalling Swiftformat..."
+            brew uninstall --force swiftformat
+            tap_swiftformat
+        else
+            echo "Found ${swiftformat_version} version of Swiftformat ✅"
         fi
     fi
 }
@@ -76,6 +105,7 @@ case $i in
     "") ;;
     install_homebrew) "$@"; exit;;
     install_swiftlint) "$@"; exit;;
+    install_swiftformat) "$@"; exit;;
 esac
 done
 
@@ -87,6 +117,9 @@ install_homebrew
 
 echo "Looking for Swiftlint..."
 install_swiftlint
+
+echo "Looking for Swiftformat..."
+install_swiftformat
 
 echo "💎 Installing Gems..."
 bundle install
