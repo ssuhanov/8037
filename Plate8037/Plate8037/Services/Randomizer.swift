@@ -9,28 +9,28 @@
 import Foundation
 
 class Randomizer {
-    func getDigits() -> (Int, Int, Int, Int) {
-        let maxNumber:UInt32 = 9
-        var firstDigit = Int(arc4random_uniform(maxNumber))
-        while firstDigit == .zero {
-            firstDigit = Int(arc4random_uniform(maxNumber))
-        }
-        
-        var secondDigit = Int(arc4random_uniform(maxNumber))
-        while secondDigit == .zero || secondDigit == firstDigit {
-            secondDigit = Int(arc4random_uniform(maxNumber))
-        }
-        
-        var thirdDigit = Int(arc4random_uniform(maxNumber))
-        while thirdDigit == .zero || thirdDigit == firstDigit || thirdDigit == secondDigit {
-            thirdDigit = Int(arc4random_uniform(maxNumber))
-        }
-        
-        var fourthDigit = Int(arc4random_uniform(maxNumber))
-        while fourthDigit == .zero || fourthDigit == thirdDigit || fourthDigit == secondDigit || fourthDigit == firstDigit {
-            fourthDigit = Int(arc4random_uniform(maxNumber))
-        }
-        
-        return (firstDigit, secondDigit, thirdDigit, fourthDigit)
+  func getDigits() -> (Int, Int, Int, Int) {
+    let maxNumber:UInt32 = 9
+    var firstDigit = Int(arc4random_uniform(maxNumber))
+    while firstDigit == .zero {
+      firstDigit = Int(arc4random_uniform(maxNumber))
     }
+    
+    var secondDigit = Int(arc4random_uniform(maxNumber))
+    while secondDigit == .zero || secondDigit == firstDigit {
+      secondDigit = Int(arc4random_uniform(maxNumber))
+    }
+    
+    var thirdDigit = Int(arc4random_uniform(maxNumber))
+    while thirdDigit == .zero || thirdDigit == firstDigit || thirdDigit == secondDigit {
+      thirdDigit = Int(arc4random_uniform(maxNumber))
+    }
+    
+    var fourthDigit = Int(arc4random_uniform(maxNumber))
+    while fourthDigit == .zero || fourthDigit == thirdDigit || fourthDigit == secondDigit || fourthDigit == firstDigit {
+      fourthDigit = Int(arc4random_uniform(maxNumber))
+    }
+    
+    return (firstDigit, secondDigit, thirdDigit, fourthDigit)
+  }
 }

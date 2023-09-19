@@ -10,27 +10,27 @@ import XCTest
 @testable import Plate8037
 
 class PrecedingNumbersTests: XCTestCase {
-    var instance: PrecedingNumbers!
-    
-    override func setUp() {
-        instance = PrecedingNumbers()
-    }
-    
-    func testCorrectNumbers1() {
-        let result = instance.getNumbers(for: 8)
-        let correctNumbers = [3, 5, 1, 7]
-        XCTAssertEqual(result, correctNumbers, "should be correct numbers: \(correctNumbers)")
-    }
-
-    func testCorrectNumbers2() {
-        let result = instance.getNumbers(for: 5)
-        let correctNumbers = [0, 2, 8, 4]
-        XCTAssertEqual(result, correctNumbers, "should be correct numbers: \(correctNumbers)")
-    }
-
-    func testCorrectNumbers3() {
-        let result = instance.getNumbers(for: 3)
-        let correctNumbers = [8, 0, 6, 2]
-        XCTAssertEqual(result, correctNumbers, "should be correct numbers: \(correctNumbers)")
-    }
+  var instance: PrecedingNumbers!
+  
+  override func setUp() {
+    instance = PrecedingNumbers()
+  }
+  
+  func testCorrectNumbers1() {
+    let result = instance.getNumbers(for: 8)
+    let correctNumbers = [3, 5, 1, 7]
+    XCTAssertEqual(result, correctNumbers, "should be correct numbers: \(correctNumbers)")
+  }
+  
+  func testCorrectNumbers2() {
+    let result = instance.getNumbers(for: 5)
+    let correctNumbers = [0, 2, 8, 4]
+    XCTAssertEqual(result, correctNumbers, "should be correct numbers: \(correctNumbers)")
+  }
+  
+  func testCorrectNumbers3() {
+    let result = instance.getNumbers(for: 3)
+    let correctNumbers = [8, 0, 6, 2]
+    XCTAssertEqual(result, correctNumbers, "should be correct numbers: \(correctNumbers)")
+  }
 }
