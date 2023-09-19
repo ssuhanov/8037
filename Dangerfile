@@ -21,6 +21,10 @@ swiftlint.lint_all_files = true
 swiftlint.lint_files inline_mode: true
 swiftlint.lint_files fail_on_error: true
 
+# Checking formatting for all Swift files
+swiftformat.additional_args = "--config .swiftformat"
+swiftformat.check_format(fail_on_error: true)
+
 # Milestones are required to track what's included in each release
 fail('This PR does not have a milestone.', sticky: false) unless !github.pr_json['milestone'].nil?
 
