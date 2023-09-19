@@ -17,7 +17,7 @@ elsif lineChanges > 250
 end
 
 # Milestones are required to track what's included in each release
-fail('This PR does not have a milestone yet.', sticky: false) unless !github.pr_json['milestone'].nil?
+fail('This PR does not have a milestone.', sticky: false) unless !github.pr_json['milestone'].nil?
 
 # ensure that all prs has assignees
-warn "This PR does not have any assignees yet." unless github.pr_json["assignee"]
+warn "This PR does not have any assignees." unless github.pr_json["assignee"]
