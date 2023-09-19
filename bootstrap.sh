@@ -11,6 +11,15 @@ install_bundler() {
     fi
 }
 
+install_homebrew() {
+    if [[ $(command -v brew) == "" ]]; then
+        echo "Homebrew is not installed. Installing Homebrew..."
+        /usr/bin/ruby -e "$(curl -fsSL  https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    else
+        echo "Homebrew Installed ✅"
+    fi
+}
+
 check_xcode() {
     project_version=$(head -n 1 .xcode-version)
     installed_versions=($(bundle exec xcversion installed))
@@ -26,6 +35,9 @@ check_xcode() {
 
 echo "Looking for Bundler..."
 install_bundler
+
+echo "Looking for Homebrew..."
+install_homebrew
 
 echo "💎 Installing Gems..."
 bundle install
