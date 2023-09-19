@@ -2,7 +2,7 @@
 
 # Tools versions #
 
-swiftlint_version="0.52.4"
+swiftlint_version="0.42.0"
 
 # Helpers #
 
