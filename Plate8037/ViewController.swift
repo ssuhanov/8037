@@ -14,6 +14,8 @@ private enum Constants {
 }
 
 class ViewController: UIViewController {
+  let someReallyReallyLongNameForTheUnusedAndAbsolutelyUselessConstant = "nothing"
+  
   private var answer: Int = 0 {
     didSet {
       answerLabel.text = (answer == 0) ? "" : "\(answer)"
@@ -47,7 +49,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var sevenDigitButton: UIButton!
   @IBOutlet weak var eightDigitButton: UIButton!
   @IBOutlet weak var nineDigitButton: UIButton!
-
+  
   @IBOutlet weak var alertBackgroundView: UIView!
   @IBOutlet weak var alertView: UIView!
   @IBOutlet weak var alertTitleLabel: UILabel!
