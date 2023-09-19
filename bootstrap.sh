@@ -74,6 +74,7 @@ for i in "$@"
 do
 case $i in
     "") ;;
+    install_homebrew) "$@"; exit;;
     install_swiftlint) "$@"; exit;;
 esac
 done

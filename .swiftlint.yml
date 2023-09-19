@@ -47,6 +47,7 @@ disabled_rules:
 excluded:
   - fastlane
   - scripts
+  - vendor
   - .git
 
 type_name:

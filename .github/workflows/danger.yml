@@ -18,6 +18,8 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Installing Homebrew
+      run: sh bootstrap.sh install_homebrew
     - name: Installing Swiftlint
       run: sh bootstrap.sh install_swiftlint
     - name: Run Danger
