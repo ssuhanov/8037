@@ -6,8 +6,8 @@
 //  Copyright © 2019 Serge Sukhanov. All rights reserved.
 //
 
-import XCTest
 @testable import Plate8037
+import XCTest
 
 class RandomizerTests: XCTestCase {
   var instance: Randomizer!

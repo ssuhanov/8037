@@ -11,7 +11,7 @@ import Foundation
 class Randomizer {
   // swiftlint:disable:next large_tuple
   func getDigits() -> (Int, Int, Int, Int) {
-    let maxNumber: Int = 9
+    let maxNumber = 9
     var firstDigit = Int.random(in: 1...maxNumber)
     while firstDigit == .zero {
       firstDigit = Int.random(in: 1...maxNumber)
