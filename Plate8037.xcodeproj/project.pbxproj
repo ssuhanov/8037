@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -153,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2C003982358784B0015AFFC /* Build configuration list for PBXNativeTarget "Plate8037" */;
 			buildPhases = (
+				B2D747EB2AB9FF4D008068DD /* Swiftlint */,
 				B2C0036A2358784A0015AFFC /* Sources */,
 				B2C0036B2358784A0015AFFC /* Frameworks */,
 				B2C0036C2358784A0015AFFC /* Resources */,
@@ -243,6 +244,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B2D747EB2AB9FF4D008068DD /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ! $CI ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint lint --strict | sed 's/warning:/error:/g'\n  else\n    echo \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B2C0036A2358784A0015AFFC /* Sources */ = {

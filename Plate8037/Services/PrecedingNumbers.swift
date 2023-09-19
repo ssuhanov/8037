@@ -13,22 +13,22 @@ class PrecedingNumbers {
     var sign = -1
     var addition = 0
     var addedNumber = digit - 5
-    
+
     var result: [Int] = []
-    
+
     for _ in 0..<4 {
       var nextNumber = addedNumber + sign * addition
       while nextNumber < 0 {
         nextNumber += 10
       }
-      
+
       while nextNumber >= 10 {
         nextNumber -= 10
       }
-      
+
       result.append(nextNumber)
       addedNumber = nextNumber
-      
+
       addition += 2
       sign = -sign
     }
