@@ -13,6 +13,7 @@ class RandomizerTests: XCTestCase {
   var instance: Randomizer!
 
   override func setUp() {
+    super.setUp()
     instance = Randomizer()
   }
 

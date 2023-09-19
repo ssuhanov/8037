@@ -13,6 +13,7 @@ class PrecedingNumbersTests: XCTestCase {
   var instance: PrecedingNumbers!
 
   override func setUp() {
+    super.setUp()
     instance = PrecedingNumbers()
   }
 
