@@ -28,4 +28,3 @@ jobs:
 
       - name: Run Danger
         run: bundle exec danger --fail-on-errors=true
-      
