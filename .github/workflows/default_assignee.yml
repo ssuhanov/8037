@@ -1,4 +1,5 @@
 name: Default assignee
+
 on:
   pull_request:
     types: [opened]
