@@ -1,0 +1,24 @@
+desc "Build Unit-tests"
+lane :unit_tests_build_for_testing do
+  scan(
+    device: ENV['TESTING_DEVICE'],
+    scheme: ENV['TESTING_SCHEME'],
+    project: ENV['PROJECT'],
+    clean: true,
+    build_for_testing: true,
+    result_bundle: true,
+    derived_data_path: ENV['DERIVED_DATA_PATH']
+  )
+end
+
+desc "Run Unit-tests without building"
+lane :unit_tests_run_without_building do
+  scan(
+    device: ENV['TESTING_DEVICE'],
+    scheme: ENV['TESTING_SCHEME'],
+    project: ENV['PROJECT'],
+    code_coverage: true,
+    test_without_building: true,
+    derived_data_path: ENV['DERIVED_DATA_PATH']
+  )
+end
