@@ -69,6 +69,15 @@ check_xcode() {
 }
 
 # Implementation #
+# Check for flags and shortcuts
+for i in "$@"
+do
+case $i in
+    "") ;;
+    install_homebrew) "$@"; exit;;
+    install_swiftlint) "$@"; exit;;
+esac
+done
 
 echo "Looking for Bundler..."
 install_bundler
