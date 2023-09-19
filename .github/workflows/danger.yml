@@ -1,0 +1,22 @@
+name: Danger
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  danger:
+
+    runs-on: macos-12
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_14.2.app/Contents/Developer
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 100
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Run danger
+      run: bundle exec danger --danger_id=DefaultDangerfile --fail-on-errors=true
+      
