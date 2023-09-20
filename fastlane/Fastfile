@@ -9,6 +9,10 @@ lane :unit_tests_build_for_testing do
     result_bundle: true,
     derived_data_path: ENV['DERIVED_DATA_PATH']
   )
+
+  # Copy .xcresult file to source root directory for Danger analysis
+  xcresult_path = lane_context[SharedValues::SCAN_GENERATED_XCRESULT_PATH]
+  FileUtils.cp_r("#{xcresult_path}", "./../Plate8037.xcresult")
 end
 
 desc "Run Unit-tests without building"
