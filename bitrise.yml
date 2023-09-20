@@ -1,0 +1,24 @@
+---
+format_version: '13'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: other
+meta:
+  bitrise.io:
+    stack: osx-xcode-14.2.x-ventura
+    machine_type_id: g2-m1.4core
+trigger_map:
+- pull_request_target_branch: dev
+  workflow: Run-Unit-Tests
+workflows:
+  _clone_repo:
+    steps:
+    - activate-ssh-key:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone:
+        asset_urls:
+          icon.svg: https://bitrise-steplib-collection.s3.amazonaws.com/steps/git-clone/assets/icon.svg
+  Run-Unit-Tests:
+    description: |- 
+      Building Application and running Unit-Tests.
+    before_run:
+    - _clone_repo
