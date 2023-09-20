@@ -54,8 +54,8 @@ workflows:
       Building Application and running Unit-Tests.
     before_run:
     - _clone_repo
+    - Install-Bundler
     steps:
-    - install-bundler: {}
     - fastlane:
         timeout: 300
         inputs:
