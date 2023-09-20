@@ -22,3 +22,15 @@ workflows:
       Building Application and running Unit-Tests.
     before_run:
     - _clone_repo
+    steps:
+    - install-bundler: {}
+    - fastlane:
+        timeout: 300
+        inputs:
+        - lane: unit_tests_build_for_testing
+        title: Build App
+    - fastlane:
+        timeout: 300
+        inputs:
+        - lane: unit_tests_run_without_building
+        title: Run Unit-Tests
