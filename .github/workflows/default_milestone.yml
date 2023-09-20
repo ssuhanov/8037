@@ -1,0 +1,30 @@
+name: Default milestone
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  default_milestone:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - uses: actions/github-script@0.8.0
+        if: |
+          ! github.event.pull_request.milestone &&
+          ! contains(github.event.pull_request.labels.*.name, 'merge') &&
+          ! contains(github.event.pull_request.labels.*.name, 'status/WIP') &&
+          ! contains(github.event.pull_request.title, 'WIP') &&
+          ! github.event.pull_request.draft
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          script: |
+            const infra_milestone = "Infra"
+            github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              milestone: infra_milestone,
+            });
