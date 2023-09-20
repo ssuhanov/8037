@@ -1,0 +1,28 @@
+name: Default milestone
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  default_milestone:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - uses: actions/github-script@v6
+        if: |
+          ! github.event.pull_request.milestone
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          script: |
+            # "Infra" milestone has number 4
+            
+            const infra_milestone_number = 4
+            github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              milestone: infra_milestone_number,
+            });
