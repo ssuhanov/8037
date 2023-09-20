@@ -1,0 +1,38 @@
+## Build generated
+.DS_Store
+build/
+DerivedData
+
+## Xcode
+xcuserdata
+*.xcuserstate
+
+## Tests generated
+Plate8037Tests/Generated/
+Plate8037/Common/Generated/
+
+## Various settings
+xcuserdata
+
+## Other
+*.xccheckout
+*.xcuserstate
+*.xcscheme
+Manifest.lock
+
+## Pods
+Pods/*
+# Podfile.lock
+Plate8037.xcworkspace/contents.xcworkspacedata
+
+## AppCode
+.idea/
+
+## Fastlane
+fastlane/report.xml
+fastlane/test_output
+Plate8037.xcresult/
+
+## Bundler
+.bundle/
+vendor/

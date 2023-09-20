@@ -1,0 +1,30 @@
+name: Default assignee
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  default_assignee:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          script: |
+            const repo = { owner: context.issue.owner, repo: context.issue.repo}
+            const pull_request_response = await github.rest.pulls.get({
+              ...repo,
+              pull_number: context.issue.number
+            });
+            const pull_request_data = pull_request_response.data
+            if (pull_request_data.assignee == null) {
+              await github.rest.issues.addAssignees ({
+                ...repo,
+                issue_number: context.issue.number,
+                assignees: [pull_request_data.user.login]
+              })
+            }

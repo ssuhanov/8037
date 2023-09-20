@@ -1,0 +1,33 @@
+name: Danger
+
+on:
+  pull_request:
+
+jobs:
+  danger:
+
+    runs-on: macos-12
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_14.2.app/Contents/Developer
+      DANGER_GITHUB_API_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 100
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Installing Homebrew
+        run: sh bootstrap.sh install_homebrew
+
+      - name: Installing Swiftlint
+        run: sh bootstrap.sh install_swiftlint
+
+      - name: Installing Swiftformat
+        run: sh bootstrap.sh install_swiftformat
+
+      - name: Run Danger
+        run: bundle exec danger --fail-on-errors=true

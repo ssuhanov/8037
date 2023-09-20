@@ -1,0 +1,20 @@
+
+warnings_threshold = 1
+
+# This is danger-xcode_summary plugin. More info: https://github.com/diogot/danger-xcode_summary
+#
+# A Danger plugin that shows all build errors, warnings and unit tests
+# results generated from xcodebuild.
+xcode_summary.ignored_files = 'Pods/**'
+xcode_summary.inline_mode = true
+xcode_summary.report 'Plate8037.xcresult'
+
+result = xcode_summary.warning_error_count 'Plate8037.xcresult'
+warnings_count = JSON.parse(result)['warnings']
+
+puts "warnings_count: #{warnings_count}"
+# Fail when exceed threshold of warnings
+fail "Number of warnings (#{warnings_count}) exceeded threshold of #{warnings_threshold}." if warnings_count > warnings_threshold
+
+# Fail and force to update the warnings threshold in this file, if the number of warnings decresed less than the threshold to avoid increasing the warnings
+fail "Hey!👋 Looks like you did a great job and decreased the number of warnings 🎉 thank you for that 😊, let's update the warnings threshold in `DangerWarningsCount` file to avoid increasing the warnings." if warnings_count < warnings_threshold

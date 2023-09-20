@@ -1,0 +1,80 @@
+---
+format_version: '12'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: other
+meta:
+  bitrise.io:
+    stack: osx-xcode-14.2.x-ventura
+    machine_type_id: g2-m1.4core
+trigger_map:
+- pull_request_target_branch: dev
+  workflow: Run-Unit-Tests
+workflows:
+  _clone_repo:
+    steps:
+    - activate-ssh-key:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone:
+        inputs:
+        - clone_depth: '100'
+        asset_urls:
+          icon.svg: https://bitrise-steplib-collection.s3.amazonaws.com/steps/git-clone/assets/icon.svg
+  bundler-installation:
+    description: |-       
+      Private workflow for installing (`install-bundler` step) and saving to cache. 
+    steps:
+    - install-bundler: {}
+    - script:
+        title: Set Ruby version to an env var
+        inputs:
+        - content: |-
+            ruby_version=$(head -n 1 .ruby-version)
+            envman add --key RUBY_VERSION --value "$ruby_version"
+    - save-cache:
+        title: Save Bundler cache
+        inputs:
+        - key: bundler-cache-{{ .Arch }}-{{ checksum "Gemfile.lock" }}
+        - paths: |-
+            ~/.rbenv/versions/$RUBY_VERSION
+            ~/.asdf/installs/ruby/$RUBY_VERSION
+  Install-Bundler:
+    description: |- 
+      Restoring Bundler from key-based cache (key is `bundler-cache-{{ .Arch }}-{{ checksum "Gemfile.lock" }}`).
+      If cache was not restored - then installing (`install-bundler` step) and saving to cache. 
+    steps:
+    - restore-cache:
+        title: Restore Bundler cache
+        inputs:
+        - key: bundler-cache-{{ .Arch }}-{{ checksum "Gemfile.lock" }}
+    - bitrise-run:
+        title: Bundler Installation and saving to cache
+        run_if: '{{not (enveq "BITRISE_CACHE_HIT" "exact")}}'
+        inputs:
+        - workflow_id: bundler-installation
+  Run-Unit-Tests:
+    description: |- 
+      Building Application and running Unit-Tests.
+    before_run:
+    - _clone_repo
+    - Install-Bundler
+    steps:
+    - fastlane:
+        timeout: 300
+        inputs:
+        - lane: unit_tests_build_for_testing
+        title: Build App
+    - script:
+        title: Check warnings count
+        is_skippable: true
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # debug log
+            set -x
+
+            bundle exec danger --dangerfile=DangerWarningsCount --danger_id=WarningsCount --fail-on-errors=true
+    - fastlane:
+        timeout: 300
+        inputs:
+        - lane: unit_tests_run_without_building
+        title: Run Unit-Tests
