@@ -61,6 +61,16 @@ workflows:
         inputs:
         - lane: unit_tests_build_for_testing
         title: Build App
+    - script:
+        title: Check warnings count
+        is_skippable: true
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # debug log
+            set -x
+
+            bundle exec danger --dangerfile=DangerWarningsCount --danger_id=WarningsCount --fail-on-errors=true
     - fastlane:
         timeout: 300
         inputs:
