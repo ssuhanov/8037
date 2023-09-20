@@ -1,5 +1,5 @@
 
-warnings_threshold = 5
+warnings_threshold = 1
 
 # This is danger-xcode_summary plugin. More info: https://github.com/diogot/danger-xcode_summary
 #
