@@ -9,6 +9,7 @@ gem 'danger-swiftlint', '~> 0.33'
 gem 'danger-swiftformat', '~> 0.8'
 gem 'danger-xcode_summary', '~> 1.2'
 gem 'fastlane', '~> 2.215'
+gem 'slather', '~> 2.7'
 gem 'xcode-install', '~> 2.8'
 
 plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')
