@@ -17,7 +17,6 @@ xcuserdata
 ## Other
 *.xccheckout
 *.xcuserstate
-*.xcscheme
 Manifest.lock
 
 ## Pods
