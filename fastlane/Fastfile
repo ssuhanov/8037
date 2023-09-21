@@ -26,3 +26,30 @@ lane :unit_tests_run_without_building do
     derived_data_path: ENV['DERIVED_DATA_PATH']
   )
 end
+
+desc('Parse Unit-Tests coverage to a simple readable JSON using Slather (with Cobertura XML)')
+lane :parse_unit_tests_coverage do
+  require 'json'
+  require_relative 'Slather-Report-Parsing.rb'
+
+  slather(
+    cobertura_xml: true,
+    output_directory: "test_output",
+    proj: ENV['PROJECT'],
+    scheme: ENV['TESTING_SCHEME']
+  )
+
+  coverage_data = parse_coverage_report("../test_output/cobertura.xml")
+  coverage_percentage = 0
+  json_report_path = "../code-coverage-report.json"
+  File.open(json_report_path, 'w') do |file|
+    coverage_percentage = ((coverage_data.covered_lines.to_f / coverage_data.total_lines.to_f) * 100).round(2)
+    code_coverage_record = {
+      "covered_lines": coverage_data.covered_lines,
+      "total_lines": coverage_data.total_lines,
+      "coverage_percentage": coverage_percentage
+    }
+    file.puts(code_coverage_record.to_json)
+  end
+  sh("cat #{json_report_path}")
+end

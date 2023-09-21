@@ -29,6 +29,14 @@ Build Unit-tests
 
 Run Unit-tests without building
 
+### parse_unit_tests_coverage
+
+```sh
+[bundle exec] fastlane parse_unit_tests_coverage
+```
+
+Parse Unit-Tests coverage to a simple readable JSON using Slather (with Cobertura XML)
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
