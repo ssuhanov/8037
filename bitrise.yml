@@ -78,3 +78,28 @@ workflows:
         inputs:
         - lane: unit_tests_run_without_building
         title: Run Unit-Tests
+  Update-Code-Coverage:
+    description: |- 
+      Scheduled (nightly) workflow for updating Unit-Tests coverage value automatically.
+      The workflow will build app, run Unit-Tests, update README.md and commit it directly to `development` in case there are any changes.
+    before_run:
+    - Run-Unit-Tests
+    steps:
+    - fastlane:
+        timeout: 300
+        inputs:
+        - lane: parse_unit_tests_coverage
+        title: Parse Unit-Tests coverage data
+    - script:
+        title: Git Push
+        inputs:
+        - content: |-
+            git config --global user.email "ssuhanov@gmail.com"
+            git config --global user.name "Sergii Sukhanov"
+
+            git pull --ff-only --autostash
+
+            git add README.md
+            git commit -m "Update Bitrise Documentation"
+
+            git push
