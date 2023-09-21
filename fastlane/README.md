@@ -29,6 +29,14 @@ Build Unit-tests
 
 Run Unit-tests without building
 
+### unit_tests
+
+```sh
+[bundle exec] fastlane unit_tests
+```
+
+Run Unit-Tests with coverage
+
 ### parse_unit_tests_coverage
 
 ```sh

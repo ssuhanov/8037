@@ -83,8 +83,14 @@ workflows:
       Scheduled (nightly) workflow for updating Unit-Tests coverage value automatically.
       The workflow will build app, run Unit-Tests, update README.md and commit it directly to `development` in case there are any changes.
     before_run:
-    - Run-Unit-Tests
+    - _clone_repo
+    - Install-Bundler
     steps:
+    - fastlane:
+        timeout: 300
+        inputs:
+        - lane: unit_tests
+        title: Build App and Run Unit-Tests
     - fastlane:
         timeout: 300
         inputs:
