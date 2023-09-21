@@ -101,7 +101,7 @@ workflows:
         inputs:
         - content: |-
             git config --global user.email "ssuhanov@gmail.com"
-            git config --global user.name "Sergii Sukhanov"
+            git config --global user.name "ssuhanov"
 
             git pull --ff-only --autostash
 
