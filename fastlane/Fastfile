@@ -28,6 +28,7 @@ lane :unit_tests_run_without_building do
 end
 
 desc('Parse Unit-Tests coverage to a simple readable JSON using Slather (with Cobertura XML)')
+desc('Update README.md file with the coverage percentage')
 lane :parse_unit_tests_coverage do
   require 'json'
   require_relative 'Slather-Report-Parsing.rb'
@@ -52,4 +53,10 @@ lane :parse_unit_tests_coverage do
     file.puts(code_coverage_record.to_json)
   end
   sh("cat #{json_report_path}")
+
+  readme_path = "../README.md"
+  File.open(readme_path, 'w') do |file|
+    file.puts("**Current Unit-Tests coverage**: #{coverage_percentage}%")
+  end
+  sh("cat #{readme_path}")
 end

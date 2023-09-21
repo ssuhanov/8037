@@ -37,6 +37,8 @@ Run Unit-tests without building
 
 Parse Unit-Tests coverage to a simple readable JSON using Slather (with Cobertura XML)
 
+Update README.md file with the coverage percentage
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
