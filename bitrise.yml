@@ -24,16 +24,10 @@ workflows:
       Private workflow for installing (`install-bundler` step) and saving to cache. 
     steps:
     - install-bundler: {}
-    - script:
-        title: Set Ruby version to an env var
-        inputs:
-        - content: |-
-            ruby_version=$(head -n 1 .ruby-version)
-            envman add --key RUBY_VERSION --value "$ruby_version"
     - save-cache:
         title: Save Bundler cache
         inputs:
-        - key: bundler-cache-{{ .Arch }}-{{ checksum "Gemfile.lock" }}
+        - key: bundler-cache-$RUBY_VERSION-{{ .Arch }}-{{ checksum "Gemfile.lock" }}
         - paths: |-
             ~/.rbenv/versions/$RUBY_VERSION
             ~/.asdf/installs/ruby/$RUBY_VERSION
@@ -42,10 +36,16 @@ workflows:
       Restoring Bundler from key-based cache (key is `bundler-cache-{{ .Arch }}-{{ checksum "Gemfile.lock" }}`).
       If cache was not restored - then installing (`install-bundler` step) and saving to cache. 
     steps:
+    - script:
+        title: Set Ruby version to an env var
+        inputs:
+        - content: |-
+            ruby_version=$(head -n 1 .ruby-version)
+            envman add --key RUBY_VERSION --value "$ruby_version"
     - restore-cache:
         title: Restore Bundler cache
         inputs:
-        - key: bundler-cache-{{ .Arch }}-{{ checksum "Gemfile.lock" }}
+        - key: bundler-cache-$RUBY_VERSION-{{ .Arch }}-{{ checksum "Gemfile.lock" }}
     - bitrise-run:
         title: Bundler Installation and saving to cache
         run_if: '{{not (enveq "BITRISE_CACHE_HIT" "exact")}}'
