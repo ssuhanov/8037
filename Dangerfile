@@ -17,9 +17,10 @@ elsif lineChanges > 250
 end
 
 # Linting all Swift files
+brew_prefix = `brew --prefix`.to_s.strip
+swiftlint.binary_path = "{brew_prefix}/bin/swiftlint"
 swiftlint.lint_all_files = true
-swiftlint.lint_files inline_mode: true
-swiftlint.lint_files fail_on_error: true
+swiftlint.lint_files(inline_mode: true, fail_on_error: true)
 
 # Checking formatting for all Swift files
 swiftformat.additional_args = "--config .swiftformat"
