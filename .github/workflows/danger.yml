@@ -8,6 +8,8 @@ jobs:
 
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    env:
+      DANGER_GITHUB_API_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
     steps:
       - uses: actions/checkout@v2
