@@ -8,7 +8,16 @@ meta:
     machine_type_id: g2-m1.4core
 trigger_map:
 - pull_request_target_branch: dev
-  workflow: Run-Unit-Tests
+  pipeline: Pull-Request-Pipeline
+pipelines:
+  Pull-Request-Pipeline:
+    stages:
+    - Run-Checks: {}
+stages:
+  Run-Checks:
+    workflows:
+    - Run-Unit-Tests: {}
+    - Run-Critical-Danger-Checks: {}
 workflows:
   _clone_repo:
     steps:
@@ -19,6 +28,17 @@ workflows:
         - clone_depth: '100'
         asset_urls:
           icon.svg: https://bitrise-steplib-collection.s3.amazonaws.com/steps/git-clone/assets/icon.svg
+  _set-pending-danger-statuses-for-pr:
+    description: |-
+      Utility workflow for setting Danger statuses required for PR as "Pending" with the link to Bitrise pipeline.
+    steps:
+    - github-status@3:
+        title: GitHub Status for Danger Critical checks
+        inputs:
+        - set_specific_status: pending
+        - status_identifier: danger/CriticalChecks
+        - description: Running on Bitrise
+        - auth_token: "$DANGER_GITHUB_API_TOKEN"
   bundler-installation:
     description: |-       
       Private workflow for installing (`install-bundler` step) and saving to cache. 
@@ -51,6 +71,45 @@ workflows:
         run_if: '{{not (enveq "BITRISE_CACHE_HIT" "exact")}}'
         inputs:
         - workflow_id: bundler-installation
+  Run-Critical-Danger-Checks:
+    description: |-
+      Rrunning Critical Danger checks defined in `DangerfileCriticalChecks`
+    before_run:
+    - _set-pending-danger-statuses-for-pr
+    - _clone-repo
+    - Install-Bundler
+    steps:
+    - script@1:
+        title: Install Homebrew
+        is_always_run: true
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            sh bootstrap.sh install_homebrew
+    - script@1:
+        title: Install Swiftlint
+        is_always_run: true
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            sh bootstrap.sh install_swiftlint
+    - script@1:
+        title: Install Swiftformat
+        is_always_run: true
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            sh bootstrap.sh install_swiftformat
+    - script@1:
+        title: Critical Danger checks
+        is_always_run: true
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # debug log
+            set -x
+
+            bundle exec danger --dangerfile=DangerfileCriticalChecks --danger_id=CriticalChecks --fail-on-errors=true
   Run-Unit-Tests:
     description: |- 
       Building Application and running Unit-Tests.
