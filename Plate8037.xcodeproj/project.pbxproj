@@ -264,7 +264,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! $CI ]; then\n  if which swiftformat > /dev/null; then\n    swiftformat --config .swiftformat --lint .\n  else\n    echo \"warning: Swiftformat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n  fi\nfi\n";
+			shellScript = "if [ ! $CI ]; then\n  eval \"$(/opt/homebrew/bin/brew shellenv)\"\n  if which swiftformat > /dev/null; then\n    swiftformat --config .swiftformat --lint .\n  else\n    echo \"warning: Swiftformat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n  fi\nfi\n";
 		};
 		B2D747EB2AB9FF4D008068DD /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -283,7 +283,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! $CI ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint lint --strict | sed 's/warning:/error:/g'\n  else\n    echo \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi\n";
+			shellScript = "if [ ! $CI ]; then\n  eval \"$(/opt/homebrew/bin/brew shellenv)\"\n  if which swiftlint > /dev/null; then\n    swiftlint lint --strict | sed 's/warning:/error:/g'\n  else\n    echo \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
