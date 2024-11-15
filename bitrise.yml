@@ -1,4 +1,8 @@
 ---
+# Workflows Naming Convention ref: https://www.pluralsight.com/blog/software-development/programming-naming-conventions-explained
+# Workflows: (upper) Kebab case                               exp: Run-Unit-Tests
+# Utility workflows: (lower) Kebab Case with underscoring     exp: _clone-repo
+
 format_version: '12'
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: other
@@ -19,7 +23,7 @@ stages:
     - Run-Unit-Tests: {}
     - Run-Critical-Danger-Checks: {}
 workflows:
-  _clone_repo:
+  _clone-repo:
     steps:
     - activate-ssh-key:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
@@ -114,7 +118,7 @@ workflows:
     description: |- 
       Building Application and running Unit-Tests.
     before_run:
-    - _clone_repo
+    - _clone-repo
     - Install-Bundler
     steps:
     - fastlane:
