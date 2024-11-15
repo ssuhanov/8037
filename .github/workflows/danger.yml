@@ -4,11 +4,11 @@ on:
   pull_request:
 
 jobs:
-  danger:
+  Danger:
 
-    runs-on: macos-13
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
     env:
-      DEVELOPER_DIR: /Applications/Xcode_15.1.app/Contents/Developer
       DANGER_GITHUB_API_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
     steps:
@@ -20,14 +20,5 @@ jobs:
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
-      - name: Installing Homebrew
-        run: sh bootstrap.sh install_homebrew
-
-      - name: Installing Swiftlint
-        run: sh bootstrap.sh install_swiftlint
-
-      - name: Installing Swiftformat
-        run: sh bootstrap.sh install_swiftformat
-
       - name: Run Danger
-        run: bundle exec danger --fail-on-errors=true
+        run: bundle exec danger --danger_id=DefaultChecks --fail-on-errors=true
