@@ -124,7 +124,7 @@ install_swiftformat
 echo "💎 Installing Gems..."
 bundle install
 
-echo "🛠 Checking Xcode version..."
-check_xcode
+# echo "🛠 Checking Xcode version..."
+# check_xcode
 
 echo "ALL DONE! ✅"
