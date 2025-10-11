@@ -213,7 +213,7 @@ class ViewController: UIViewController {
 
   private func showAlertView(type: AlertType) {
     signsAnimationTimer?.invalidate()
-    let correctTitles = ["HOORAY!", "YEAAAH!", "CORRECT!"]
+    let correctTitles = ["HOORAY!", "YEAAAH!", "YOU ROCK!"]
     let incorrectTitles = ["SORRY", "OH, NO", "NOT THIS TIME"]
 
     let titleIndex = Int(UInt32.random(in: 0..<UInt32.max) % 3)
@@ -221,11 +221,11 @@ class ViewController: UIViewController {
     switch type {
     case .correctAnswer:
       alertTitleLabel.text = correctTitles[titleIndex]
-      alertDescriptionLabel.text = "You're right!"
-      alertButton.setTitle("The next", for: .normal)
+      alertDescriptionLabel.text = "Absolutely correct!"
+      alertButton.setTitle("Let's play again", for: .normal)
     case .wrongAnswer:
       alertTitleLabel.text = incorrectTitles[titleIndex]
-      alertDescriptionLabel.text = "You can do better!"
+      alertDescriptionLabel.text = "You could do better!"
       alertButton.setTitle("Try again", for: .normal)
     }
 
