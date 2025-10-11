@@ -462,6 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3D3JF5D29C;
 				INFOPLIST_FILE = Plate8037/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = 8037;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,6 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3D3JF5D29C;
 				INFOPLIST_FILE = Plate8037/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = 8037;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
