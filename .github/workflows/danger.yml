@@ -6,9 +6,10 @@ on:
 jobs:
   Danger:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     timeout-minutes: 2
     env:
+      DEVELOPER_DIR: /Applications/Xcode_16.1.app/Contents/Developer
       DANGER_GITHUB_API_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
     steps:
@@ -20,5 +21,14 @@ jobs:
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
+      - name: Install Homebrew
+        run: sh bootstrap.sh install_homebrew
+
+      - name: Install Swiftlint
+        run: sh bootstrap.sh install_swiftlint
+
+      - name: Install Swiftformat
+        run: sh bootstrap.sh install_swiftformat
+
       - name: Run Danger
-        run: bundle exec danger --danger_id=DefaultChecks --fail-on-errors=true
+        run: bundle exec danger --fail-on-errors=true
