@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 
   @IBOutlet var answerLabel: UILabel!
 
-  #warning("TODO: - should be a separate class RoundCornerButton and these outlets shold be gone")
+  // TODO: - should be a separate class RoundCornerButton and these outlets shold be gone
   @IBOutlet var zeroDigitButton: UIButton!
   @IBOutlet var oneDigitButton: UIButton!
   @IBOutlet var twoDigitButton: UIButton!

@@ -8,7 +8,7 @@ gem 'danger', '~> 9.3'
 gem 'danger-swiftlint', '~> 0.34.0'
 gem 'danger-swiftformat', '~> 0.9.0'
 gem 'danger-xcode_summary', '~> 1.3.1'
-gem 'fastlane', '~> 2.225'
+gem 'fastlane', '~> 2.227.0'
 gem 'xcode-install', '~> 2.8'
 gem 'xcresult', '~> 0.2.2'
 
