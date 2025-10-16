@@ -22,7 +22,15 @@ class ViewController: UIViewController {
 
   private var correctAnswer: Int = 0
 
-  private var keyboardIsActive: Bool = false
+  private var keyboardIsActive: Bool = false {
+    didSet {
+      if keyboardIsActive {
+        enableKeyboard()
+      } else {
+        disableKeyboard()
+      }
+    }
+  }
 
   private var signsAnimationTimer: Timer?
 
@@ -95,13 +103,13 @@ class ViewController: UIViewController {
   }
 
   private func startAgain() {
+    keyboardIsActive = false
     let digits = Randomizer().getDigits()
     let resultChecker = ResultChecker(digits: digits)
 
     answer = 0
     correctAnswer = resultChecker.correctAnswer()
     let animationGroup = DispatchGroup()
-    keyboardIsActive = false
 
     firstDigitLabel.assignWithAnimation(digit: digits.0, animationGroup: animationGroup)
     secondDigitLabel.assignWithAnimation(digit: digits.1, animationGroup: animationGroup)
@@ -258,6 +266,33 @@ class ViewController: UIViewController {
         self?.alertView.isHidden = true
       }
     )
+  }
+
+  private var digitButtons: [UIButton] {
+    [
+      zeroDigitButton,
+      oneDigitButton,
+      twoDigitButton,
+      threeDigitButton,
+      fourDigitButton,
+      fiveDigitButton,
+      sixDigitButton,
+      sevenDigitButton,
+      eightDigitButton,
+      nineDigitButton
+    ]
+  }
+
+  private func disableKeyboard() {
+    digitButtons.forEach {
+      $0.isEnabled = false
+    }
+  }
+
+  private func enableKeyboard() {
+    digitButtons.forEach {
+      $0.isEnabled = true
+    }
   }
 }
 
