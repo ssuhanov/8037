@@ -7,6 +7,7 @@ jobs:
   unit_tests:
 
     runs-on: macos-15
+    timeout-minutes: 10
     env:
       DEVELOPER_DIR: /Applications/Xcode_26.0.1.app/Contents/Developer
       DANGER_GITHUB_API_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
@@ -32,7 +33,7 @@ jobs:
   danger_check:
 
     runs-on: macos-15
-    timeout-minutes: 2
+    timeout-minutes: 5
     env:
       DEVELOPER_DIR: /Applications/Xcode_26.0.1.app/Contents/Developer
       DANGER_GITHUB_API_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
