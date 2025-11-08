@@ -11,6 +11,3 @@ gem 'danger-xcode_summary', '~> 1.3.1'
 gem 'fastlane', '~> 2.227.0'
 gem 'xcode-install', '~> 2.8'
 gem 'xcresult', '~> 0.2.2'
-
-plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')
-eval_gemfile(plugins_path) if File.exist?(plugins_path)
